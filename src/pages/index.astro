@@ -1,0 +1,692 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section id="hero" class="pt-20 pb-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1
+        class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"
+      >
+        Simplifying Finnish Bureaucracy for Immigrants
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        An AI-powered, multilingual support system that breaks down information
+        barriers and guides immigrants through complex Finnish administrative
+        processes.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="/about"
+          class="px-6 py-3 bg-gradient-to-r from-blue-600 to-pink-500 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all"
+        >
+          Learn About Our Mission
+        </a>
+        <a
+          href="#contact"
+          class="px-6 py-3 bg-white bg-opacity-80 text-blue-600 font-medium rounded-lg border border-blue-100 hover:bg-blue-50 transition-all"
+        >
+          Partner With Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section id="problem" class="py-16 px-4 bg-white bg-opacity-90">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">The Information Challenge</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Immigrants to Finland face significant barriers when navigating the
+          complex bureaucratic landscape.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-blue-50 p-8 rounded-xl shadow-sm">
+          <h3 class="text-xl font-semibold mb-4 text-blue-700">
+            Key Challenges
+          </h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <svg
+                class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span
+                ><strong>Complex task-based information needs</strong> arising from
+                frequently changing bureaucratic processes</span
+              >
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span
+                ><strong>Information literacy challenges</strong> – difficulty understanding
+                bureaucratic structures, terminology, and processes</span
+              >
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span
+                ><strong>Digital information access barriers</strong> affecting the
+                ability to navigate online services</span
+              >
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span
+                ><strong>Fragmented information environment</strong> across multiple
+                websites and government agencies</span
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="bg-pink-50 p-8 rounded-xl shadow-sm">
+          <h3 class="text-xl font-semibold mb-4 text-pink-700">Root Causes</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <svg
+                class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span
+                >Information structured around <strong
+                  >bureaucratic processes</strong
+                > rather than immigrant information tasks</span
+              >
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span
+                >Limited <strong>natural language information retrieval</strong>
+                capabilities (requiring exact keywords)</span
+              >
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span
+                ><strong>Information silos</strong> between organizations, forcing
+                immigrants to piece together complex information</span
+              >
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span
+                >User interfaces designed from the perspective of <strong
+                  >information providers</strong
+                > rather than information users</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section id="solution" class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Our Approach</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Finntegrate leverages information science and AI technology to create
+          a user-centered solution.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
+        >
+          <div
+            class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="h-6 w-6 text-blue-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">
+            Task-Based Information Seeking
+          </h3>
+          <p class="text-gray-600">
+            Understanding immigrant information tasks and designing solutions
+            that support successful task completion.
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
+        >
+          <div
+            class="h-12 w-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="h-6 w-6 text-pink-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Natural Language Interface</h3>
+          <p class="text-gray-600">
+            Allowing immigrants to ask questions in their own words rather than
+            requiring exact keywords or bureaucratic terminology.
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
+        >
+          <div
+            class="h-12 w-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="h-6 w-6 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Multilingual Support</h3>
+          <p class="text-gray-600">
+            Breaking down language barriers by providing information in the
+            user's preferred language.
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
+        >
+          <div
+            class="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="h-6 w-6 text-green-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">AI-Powered Assistance</h3>
+          <p class="text-gray-600">
+            Using Retrieval Augmented Generation to provide accurate,
+            context-aware information from official sources.
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
+        >
+          <div
+            class="h-12 w-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="h-6 w-6 text-yellow-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">
+            Cross-Organizational Knowledge
+          </h3>
+          <p class="text-gray-600">
+            Breaking down information silos between government agencies to
+            provide a holistic view of immigrant needs.
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
+        >
+          <div
+            class="h-12 w-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="h-6 w-6 text-indigo-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Privacy-First Design</h3>
+          <p class="text-gray-600">
+            Building trust through transparency, with no storage of personal
+            identifiable information or sensitive data.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Status -->
+  <section id="status" class="py-16 px-4 bg-white bg-opacity-90">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Project Status</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Finntegrate is an active project currently in development with several
+          milestones already achieved.
+        </p>
+      </div>
+
+      <div class="relative border-l-4 border-blue-500 ml-4 md:ml-8 pl-6 pb-2">
+        <!-- Timeline items -->
+        <div class="mb-10 relative">
+          <div
+            class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-blue-500 border-4 border-white"
+          >
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold text-blue-700">
+              Core Information Retrieval System
+            </h3>
+            <span
+              class="inline-block px-3 py-1 text-sm font-medium bg-green-100 text-green-800 rounded-full mb-2"
+              >Completed</span
+            >
+            <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
+              <li>Web scraping official information resources</li>
+              <li>Building a vector database with task-relevant metadata</li>
+              <li>Implementing information retrieval mechanisms</li>
+              <li>Creating a basic information interaction interface</li>
+              <li>Adding initial multilingual information support</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mb-10 relative">
+          <div
+            class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-blue-500 border-4 border-white"
+          >
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold text-blue-700">
+              Enhanced Information Capabilities
+            </h3>
+            <span
+              class="inline-block px-3 py-1 text-sm font-medium bg-blue-100 text-blue-800 rounded-full mb-2"
+              >In Progress</span
+            >
+            <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
+              <li>User task analysis and information journey mapping</li>
+              <li>
+                Multi-agent system development for complex information tasks
+              </li>
+              <li>
+                Specialized information agents for specific immigrant scenarios
+              </li>
+              <li>
+                Expanded knowledge base integration across information silos
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mb-10 relative">
+          <div
+            class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-gray-300 border-4 border-white"
+          >
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-700">
+              Information Architecture Refinement
+            </h3>
+            <span
+              class="inline-block px-3 py-1 text-sm font-medium bg-gray-200 text-gray-800 rounded-full mb-2"
+              >Planned</span
+            >
+            <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
+              <li>Frontend/backend separation for scalability</li>
+              <li>API development for third-party integration</li>
+              <li>Improved UI based on user research</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div
+            class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-gray-300 border-4 border-white"
+          >
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-700">
+              User Testing & Research
+            </h3>
+            <span
+              class="inline-block px-3 py-1 text-sm font-medium bg-gray-200 text-gray-800 rounded-full mb-2"
+              >Planned</span
+            >
+            <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
+              <li>User survey for information needs assessment</li>
+              <li>Community feedback gathering and testing</li>
+              <li>Documentation of information behavior findings</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team/Collaborators -->
+  <section id="team" class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Our Team</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Finntegrate is developed by a small team with firsthand experience as
+          immigrants in Finland.
+        </p>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-8 justify-center">
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm text-center max-w-xs mx-auto"
+        >
+          <div
+            class="h-24 w-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center"
+          >
+            <svg
+              class="h-12 w-12 text-blue-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold">Collaborator #1</h3>
+          <p class="text-gray-500 mb-3">Technical Developer</p>
+          <p class="text-gray-600 text-sm">
+            Experience as an immigrant in Finland with a background in AI and
+            information systems development.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm text-center max-w-xs mx-auto"
+        >
+          <div
+            class="h-24 w-24 bg-pink-100 rounded-full mx-auto mb-4 flex items-center justify-center"
+          >
+            <svg
+              class="h-12 w-12 text-pink-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold">Collaborator #2</h3>
+          <p class="text-gray-500 mb-3">Information Designer</p>
+          <p class="text-gray-600 text-sm">
+            Firsthand experience with Finnish bureaucracy and expertise in
+            user-centered information design.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-blue-50 p-8 rounded-xl shadow-sm max-w-3xl mx-auto">
+        <h3 class="text-xl font-semibold mb-4 text-center">
+          Looking for Partners
+        </h3>
+        <p class="text-gray-700 mb-6">
+          We're seeking potential collaborators and advisors in the following
+          areas:
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="flex items-center">
+            <svg
+              class="h-5 w-5 text-blue-500 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Information Science Researchers</span>
+          </div>
+          <div class="flex items-center">
+            <svg
+              class="h-5 w-5 text-blue-500 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Government Agency Representatives</span>
+          </div>
+          <div class="flex items-center">
+            <svg
+              class="h-5 w-5 text-blue-500 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Immigrant Support Organizations</span>
+          </div>
+          <div class="flex items-center">
+            <svg
+              class="h-5 w-5 text-blue-500 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Funding Partners & Sponsors</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact/CTA -->
+  <section
+    id="contact"
+    class="py-16 px-4 bg-gradient-to-br from-blue-600 to-pink-500 text-white"
+  >
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Join Our Mission</h2>
+      <p class="text-xl mb-8">
+        Help us improve the immigrant experience in Finland by contributing to
+        Finntegrate.
+      </p>
+
+      <div
+        class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl max-w-xl mx-auto"
+      >
+        <div class="grid gap-6 mb-6">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Get Involved</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <a
+                href="https://github.com/finntegrate/migri-assistant"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center gap-2 bg-white text-blue-600 py-3 px-4 rounded-lg font-medium hover:bg-opacity-90 transition-all"
+              >
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.155-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                GitHub Repository
+              </a>
+              <a
+                href="mailto:contact@finntegrate.org"
+                class="flex items-center justify-center gap-2 bg-white text-pink-600 py-3 px-4 rounded-lg font-medium hover:bg-opacity-90 transition-all"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
