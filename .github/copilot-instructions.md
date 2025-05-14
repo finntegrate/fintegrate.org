@@ -25,7 +25,7 @@
 
 ### Icons
 
-We use the Iconify library for icons. Our project currently has the Material Design Icons (MDI) and Material Symbols Light sets installed.
+We use the Iconify library for icons. Our project currently has the Material Design Icons (MDI) and Material Symbols sets installed.
 
 ```javascript
 ---
@@ -35,8 +35,8 @@ import { Icon } from 'astro-icon/components'
 <!-- Embed the `account` icon from `@iconify-json/mdi` -->
 <Icon name="mdi:account" />
 
-<!-- Embed the `person` icon from `@iconify-json/material-symbols-light` -->
-<Icon name="material-symbols-light:person" />
+<!-- Embed the `person` icon from `@iconify-json/material-symbols` -->
+<Icon name="material-symbols:person" />
 ```
 
 ### Context7
