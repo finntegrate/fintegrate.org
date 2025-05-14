@@ -11,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@iconify-json/material-symbols-light": "^1.2.20",
     "@iconify-json/mdi": "^1.2.3",
     "@tailwindcss/vite": "^4.1.6",
     "astro": "^5.7.12",
