@@ -3,18 +3,30 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+  <!-- Meta Tags -->
+  <head>
+    <title>Finntegrate - Making Finnish Immigration Easier</title>
+    <meta
+      name="description"
+      content="Finntegrate helps immigrants navigate Finnish administrative processes through clear, multilingual guidance and AI-powered assistance."
+    />
+    <meta
+      name="keywords"
+      content="Finnish immigration help, Finland bureaucracy assistance, multilingual immigration support, Migri help, Finland residence permit"
+    />
+  </head>
+
   <!-- Hero Section -->
   <section id="hero" class="pt-20 pb-16 px-4">
     <div class="max-w-4xl mx-auto text-center">
       <h1
         class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"
       >
-        Simplifying Finnish Bureaucracy for Immigrants
+        Making Finnish Immigration Simpler
       </h1>
       <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-        An AI-powered, multilingual support system that breaks down information
-        barriers and guides immigrants through complex Finnish administrative
-        processes.
+        We're building an AI-powered, multilingual guide that helps immigrants
+        find and understand the information they need when moving to Finland.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <a
@@ -39,14 +51,14 @@ import Layout from "../layouts/Layout.astro";
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">The Information Challenge</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Immigrants to Finland face significant barriers when navigating the
-          complex bureaucratic landscape.
+          Moving to a new country is complicated. Finding the right information
+          shouldn't be.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-blue-50 p-8 rounded-xl shadow-sm">
           <h3 class="text-xl font-semibold mb-4 text-blue-700">
-            Key Challenges
+            Common Hurdles
           </h3>
           <ul class="space-y-3 text-gray-700">
             <li class="flex items-start">
@@ -55,7 +67,9 @@ import Layout from "../layouts/Layout.astro";
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden="true"
               >
+                <title>Information</title>
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -63,8 +77,8 @@ import Layout from "../layouts/Layout.astro";
                   d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               <span
-                ><strong>Complex task-based information needs</strong> arising from
-                frequently changing bureaucratic processes</span
+                ><strong>Complex processes</strong> that change frequently and require
+                specific steps</span
               >
             </li>
             <li class="flex items-start">
@@ -73,7 +87,9 @@ import Layout from "../layouts/Layout.astro";
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden="true"
               >
+                <title>Information</title>
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -81,8 +97,8 @@ import Layout from "../layouts/Layout.astro";
                   d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               <span
-                ><strong>Information literacy challenges</strong> – difficulty understanding
-                bureaucratic structures, terminology, and processes</span
+                ><strong>Unfamiliar terms and systems</strong> that are hard to understand
+                without guidance</span
               >
             </li>
             <li class="flex items-start">
@@ -91,7 +107,9 @@ import Layout from "../layouts/Layout.astro";
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden="true"
               >
+                <title>Information</title>
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -99,8 +117,8 @@ import Layout from "../layouts/Layout.astro";
                   d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               <span
-                ><strong>Digital information access barriers</strong> affecting the
-                ability to navigate online services</span
+                ><strong>Online services</strong> that can be difficult to find and
+                use</span
               >
             </li>
             <li class="flex items-start">
@@ -109,7 +127,9 @@ import Layout from "../layouts/Layout.astro";
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden="true"
               >
+                <title>Information</title>
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -117,14 +137,16 @@ import Layout from "../layouts/Layout.astro";
                   d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               <span
-                ><strong>Fragmented information environment</strong> across multiple
-                websites and government agencies</span
+                ><strong>Information spread across many websites</strong> from different
+                government offices</span
               >
             </li>
           </ul>
         </div>
         <div class="bg-pink-50 p-8 rounded-xl shadow-sm">
-          <h3 class="text-xl font-semibold mb-4 text-pink-700">Root Causes</h3>
+          <h3 class="text-xl font-semibold mb-4 text-pink-700">
+            Why It Happens
+          </h3>
           <ul class="space-y-3 text-gray-700">
             <li class="flex items-start">
               <svg
@@ -132,7 +154,9 @@ import Layout from "../layouts/Layout.astro";
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden="true"
               >
+                <title>Checkmark</title>
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -140,9 +164,9 @@ import Layout from "../layouts/Layout.astro";
                   d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               <span
-                >Information structured around <strong
-                  >bureaucratic processes</strong
-                > rather than immigrant information tasks</span
+                >Information is organized around <strong
+                  >official processes</strong
+                > rather than what newcomers need to know</span
               >
             </li>
             <li class="flex items-start">
@@ -151,7 +175,9 @@ import Layout from "../layouts/Layout.astro";
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden="true"
               >
+                <title>Checkmark</title>
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -159,8 +185,8 @@ import Layout from "../layouts/Layout.astro";
                   d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               <span
-                >Limited <strong>natural language information retrieval</strong>
-                capabilities (requiring exact keywords)</span
+                >Search tools often require <strong>exact official terms</strong
+                > instead of everyday language</span
               >
             </li>
             <li class="flex items-start">
@@ -169,7 +195,9 @@ import Layout from "../layouts/Layout.astro";
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden="true"
               >
+                <title>Checkmark</title>
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -177,8 +205,8 @@ import Layout from "../layouts/Layout.astro";
                   d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               <span
-                ><strong>Information silos</strong> between organizations, forcing
-                immigrants to piece together complex information</span
+                ><strong>Different agencies</strong> handle different parts of the
+                process, making it hard to see the complete picture</span
               >
             </li>
             <li class="flex items-start">
@@ -187,7 +215,9 @@ import Layout from "../layouts/Layout.astro";
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden="true"
               >
+                <title>Checkmark</title>
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -195,9 +225,9 @@ import Layout from "../layouts/Layout.astro";
                   d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               <span
-                >User interfaces designed from the perspective of <strong
-                  >information providers</strong
-                > rather than information users</span
+                >Systems are designed from the <strong
+                  >service provider's perspective</strong
+                > rather than the newcomer's needs</span
               >
             </li>
           </ul>
@@ -210,10 +240,10 @@ import Layout from "../layouts/Layout.astro";
   <section id="solution" class="py-16 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Our Approach</h2>
+        <h2 class="text-3xl font-bold mb-4">Our Solution</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Finntegrate leverages information science and AI technology to create
-          a user-centered solution.
+          We're building a tool that puts your needs first, making it easier to
+          find and understand Finnish immigration information.
         </p>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
@@ -228,7 +258,9 @@ import Layout from "../layouts/Layout.astro";
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
+              <title>Search</title>
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -236,12 +268,10 @@ import Layout from "../layouts/Layout.astro";
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">
-            Task-Based Information Seeking
-          </h3>
+          <h3 class="text-lg font-semibold mb-2">Practical, Task-Based Help</h3>
           <p class="text-gray-600">
-            Understanding immigrant information tasks and designing solutions
-            that support successful task completion.
+            We focus on what you're trying to do, not just what the system
+            requires, so you can complete important tasks successfully.
           </p>
         </div>
         <div
@@ -255,7 +285,9 @@ import Layout from "../layouts/Layout.astro";
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
+              <title>Chat</title>
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -264,10 +296,10 @@ import Layout from "../layouts/Layout.astro";
               ></path>
             </svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Natural Language Interface</h3>
+          <h3 class="text-lg font-semibold mb-2">Talk Like a Human</h3>
           <p class="text-gray-600">
-            Allowing immigrants to ask questions in their own words rather than
-            requiring exact keywords or bureaucratic terminology.
+            Ask questions in your own words, not official terminology. Our
+            system understands what you mean, not just what you say.
           </p>
         </div>
         <div
@@ -281,7 +313,9 @@ import Layout from "../layouts/Layout.astro";
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
+              <title>Globe</title>
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -290,10 +324,10 @@ import Layout from "../layouts/Layout.astro";
               ></path>
             </svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Multilingual Support</h3>
+          <h3 class="text-lg font-semibold mb-2">Your Language, Not Ours</h3>
           <p class="text-gray-600">
-            Breaking down language barriers by providing information in the
-            user's preferred language.
+            Get help in your preferred language, not just Finnish or English,
+            making complex information more accessible.
           </p>
         </div>
         <div
@@ -307,7 +341,9 @@ import Layout from "../layouts/Layout.astro";
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
+              <title>Lightning</title>
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -315,10 +351,10 @@ import Layout from "../layouts/Layout.astro";
                 d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">AI-Powered Assistance</h3>
+          <h3 class="text-lg font-semibold mb-2">Smart, AI-Powered Help</h3>
           <p class="text-gray-600">
-            Using Retrieval Augmented Generation to provide accurate,
-            context-aware information from official sources.
+            Our system finds the right information from official sources and
+            explains it clearly, in a way that makes sense for your situation.
           </p>
         </div>
         <div
@@ -332,7 +368,9 @@ import Layout from "../layouts/Layout.astro";
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
+              <title>Document</title>
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -341,12 +379,10 @@ import Layout from "../layouts/Layout.astro";
               ></path>
             </svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">
-            Cross-Organizational Knowledge
-          </h3>
+          <h3 class="text-lg font-semibold mb-2">Connecting the Dots</h3>
           <p class="text-gray-600">
-            Breaking down information silos between government agencies to
-            provide a holistic view of immigrant needs.
+            We bring together information from different agencies so you can see
+            the whole picture, not just one piece at a time.
           </p>
         </div>
         <div
@@ -360,7 +396,9 @@ import Layout from "../layouts/Layout.astro";
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
+              <title>Shield</title>
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -369,10 +407,10 @@ import Layout from "../layouts/Layout.astro";
               ></path>
             </svg>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Privacy-First Design</h3>
+          <h3 class="text-lg font-semibold mb-2">Your Privacy First</h3>
           <p class="text-gray-600">
-            Building trust through transparency, with no storage of personal
-            identifiable information or sensitive data.
+            We help without collecting your personal information. We don't store
+            your data or ask for sensitive details.
           </p>
         </div>
       </div>
@@ -383,10 +421,10 @@ import Layout from "../layouts/Layout.astro";
   <section id="status" class="py-16 px-4 bg-white bg-opacity-90">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Project Status</h2>
+        <h2 class="text-3xl font-bold mb-4">Where We Are Now</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Finntegrate is an active project currently in development with several
-          milestones already achieved.
+          Finntegrate is an active project with several key milestones already
+          completed.
         </p>
       </div>
 
@@ -395,22 +433,23 @@ import Layout from "../layouts/Layout.astro";
         <div class="mb-10 relative">
           <div
             class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-blue-500 border-4 border-white"
+            aria-hidden="true"
           >
           </div>
           <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
             <h3 class="text-lg font-semibold text-blue-700">
-              Core Information Retrieval System
+              Core Information System
             </h3>
             <span
               class="inline-block px-3 py-1 text-sm font-medium bg-green-100 text-green-800 rounded-full mb-2"
               >Completed</span
             >
             <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-              <li>Web scraping official information resources</li>
-              <li>Building a vector database with task-relevant metadata</li>
-              <li>Implementing information retrieval mechanisms</li>
-              <li>Creating a basic information interaction interface</li>
-              <li>Adding initial multilingual information support</li>
+              <li>Collected information from official websites</li>
+              <li>Created a searchable database with relevant filters</li>
+              <li>Built tools to find the right information quickly</li>
+              <li>Developed a simple chat interface</li>
+              <li>Added support for multiple languages</li>
             </ul>
           </div>
         </div>
@@ -418,27 +457,24 @@ import Layout from "../layouts/Layout.astro";
         <div class="mb-10 relative">
           <div
             class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-blue-500 border-4 border-white"
+            aria-hidden="true"
           >
           </div>
           <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
             <h3 class="text-lg font-semibold text-blue-700">
-              Enhanced Information Capabilities
+              Advanced Features
             </h3>
             <span
               class="inline-block px-3 py-1 text-sm font-medium bg-blue-100 text-blue-800 rounded-full mb-2"
               >In Progress</span
             >
             <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-              <li>User task analysis and information journey mapping</li>
+              <li>Understanding what users need at each step</li>
+              <li>Creating specialized helpers for different situations</li>
               <li>
-                Multi-agent system development for complex information tasks
+                Building tools for specific scenarios like permit interviews
               </li>
-              <li>
-                Specialized information agents for specific immigrant scenarios
-              </li>
-              <li>
-                Expanded knowledge base integration across information silos
-              </li>
+              <li>Connecting information from different government sources</li>
             </ul>
           </div>
         </div>
@@ -446,20 +482,21 @@ import Layout from "../layouts/Layout.astro";
         <div class="mb-10 relative">
           <div
             class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-gray-300 border-4 border-white"
+            aria-hidden="true"
           >
           </div>
           <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
             <h3 class="text-lg font-semibold text-gray-700">
-              Information Architecture Refinement
+              Technical Improvements
             </h3>
             <span
               class="inline-block px-3 py-1 text-sm font-medium bg-gray-200 text-gray-800 rounded-full mb-2"
               >Planned</span
             >
             <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-              <li>Frontend/backend separation for scalability</li>
-              <li>API development for third-party integration</li>
-              <li>Improved UI based on user research</li>
+              <li>Making the system more flexible and expandable</li>
+              <li>Creating ways for other services to connect with ours</li>
+              <li>Improving the design based on user feedback</li>
             </ul>
           </div>
         </div>
@@ -467,20 +504,19 @@ import Layout from "../layouts/Layout.astro";
         <div class="relative">
           <div
             class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-gray-300 border-4 border-white"
+            aria-hidden="true"
           >
           </div>
           <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-            <h3 class="text-lg font-semibold text-gray-700">
-              User Testing & Research
-            </h3>
+            <h3 class="text-lg font-semibold text-gray-700">User Research</h3>
             <span
               class="inline-block px-3 py-1 text-sm font-medium bg-gray-200 text-gray-800 rounded-full mb-2"
               >Planned</span
             >
             <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-              <li>User survey for information needs assessment</li>
-              <li>Community feedback gathering and testing</li>
-              <li>Documentation of information behavior findings</li>
+              <li>Asking immigrants what help they need most</li>
+              <li>Getting feedback from the community</li>
+              <li>Learning how people search for immigration information</li>
             </ul>
           </div>
         </div>
@@ -488,82 +524,22 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- Team/Collaborators -->
+  <!-- Partnership Section -->
   <section id="team" class="py-16 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Our Team</h2>
+        <h2 class="text-3xl font-bold mb-4">Working Together</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Finntegrate is developed by a small team with firsthand experience as
-          immigrants in Finland.
+          Finntegrate is built by people who've moved to Finland themselves. We
+          know firsthand how challenging it can be.
         </p>
       </div>
 
-      <!-- <div class="flex flex-col md:flex-row gap-8 justify-center">
-        <div
-          class="bg-white p-6 rounded-xl shadow-sm text-center max-w-xs mx-auto"
-        >
-          <div
-            class="h-24 w-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center"
-          >
-            <svg
-              class="h-12 w-12 text-blue-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold">Collaborator #1</h3>
-          <p class="text-gray-500 mb-3">Technical Developer</p>
-          <p class="text-gray-600 text-sm">
-            Experience as an immigrant in Finland with a background in AI and
-            information systems development.
-          </p>
-        </div>
-
-        <div
-          class="bg-white p-6 rounded-xl shadow-sm text-center max-w-xs mx-auto"
-        >
-          <div
-            class="h-24 w-24 bg-pink-100 rounded-full mx-auto mb-4 flex items-center justify-center"
-          >
-            <svg
-              class="h-12 w-12 text-pink-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold">Collaborator #2</h3>
-          <p class="text-gray-500 mb-3">Information Designer</p>
-          <p class="text-gray-600 text-sm">
-            Firsthand experience with Finnish bureaucracy and expertise in
-            user-centered information design.
-          </p>
-        </div>
-      </div> -->
-
       <div class="mt-12 bg-blue-50 p-8 rounded-xl shadow-sm max-w-3xl mx-auto">
-        <h3 class="text-xl font-semibold mb-4 text-center">
-          Looking for Partners
-        </h3>
+        <h3 class="text-xl font-semibold mb-4 text-center">Partner With Us</h3>
         <p class="text-gray-700 mb-6">
-          We're seeking potential collaborators and advisors in the following
-          areas:
+          We're looking for partners who want to help make Finland more
+          accessible to newcomers:
         </p>
         <div class="grid sm:grid-cols-2 gap-4">
           <div class="flex items-center">
@@ -572,14 +548,16 @@ import Layout from "../layouts/Layout.astro";
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
+              <title>Checkmark</title>
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            <span>Information Science Researchers</span>
+            <span>Information Specialists</span>
           </div>
           <div class="flex items-center">
             <svg
@@ -587,14 +565,16 @@ import Layout from "../layouts/Layout.astro";
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
+              <title>Checkmark</title>
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            <span>Government Agency Representatives</span>
+            <span>Government Agencies</span>
           </div>
           <div class="flex items-center">
             <svg
@@ -602,14 +582,16 @@ import Layout from "../layouts/Layout.astro";
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
+              <title>Checkmark</title>
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            <span>Immigrant Support Organizations</span>
+            <span>Immigrant Support Groups</span>
           </div>
           <div class="flex items-center">
             <svg
@@ -617,14 +599,16 @@ import Layout from "../layouts/Layout.astro";
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
+              <title>Checkmark</title>
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            <span>Funding Partners & Sponsors</span>
+            <span>Funding Organizations</span>
           </div>
         </div>
       </div>
@@ -639,8 +623,8 @@ import Layout from "../layouts/Layout.astro";
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6">Join Our Mission</h2>
       <p class="text-xl mb-8">
-        Help us improve the immigrant experience in Finland by contributing to
-        Finntegrate.
+        Help us make moving to Finland smoother for everyone. Together, we can
+        create a better experience for newcomers.
       </p>
 
       <div
@@ -656,7 +640,13 @@ import Layout from "../layouts/Layout.astro";
                 rel="noopener noreferrer"
                 class="flex items-center justify-center gap-2 bg-white text-blue-600 py-3 px-4 rounded-lg font-medium hover:bg-opacity-90 transition-all"
               >
-                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  class="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <title>GitHub</title>
                   <path
                     fill-rule="evenodd"
                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.155-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
@@ -673,7 +663,9 @@ import Layout from "../layouts/Layout.astro";
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  aria-hidden="true"
                 >
+                  <title>Email</title>
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
