@@ -1,4 +1,7 @@
-/* Don't remove these imports, they are required for Tailwind and daisyUI to work */
+/* Don't remove these imports, they are required for Tailwind 4.x and daisyUI 5.x to work 
+
+See: https: //daisyui.com/docs/install/
+*/
 @import 'tailwindcss';
 @plugin 'daisyui';
 
