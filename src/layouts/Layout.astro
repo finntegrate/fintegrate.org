@@ -5,7 +5,7 @@ import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -14,7 +14,9 @@ import "../styles/global.css";
     <title>Finntegrate - Simplifying Finnish Bureaucracy</title>
   </head>
   <body>
-    <div class="min-h-screen font-sans text-gray-800 overflow-x-hidden">
+    <div
+      class="min-h-screen font-sans text-base-content bg-base-100 overflow-x-hidden"
+    >
       <!-- Background with reduced opacity -->
       <img
         class="fixed top-0 left-0 w-full h-full z-[-1] blur-3xl opacity-60"
@@ -30,13 +32,13 @@ import "../styles/global.css";
       <slot />
 
       <!-- Footer -->
-      <footer class="py-8 px-4 bg-gray-800 text-gray-300">
-        <div class="max-w-6xl mx-auto">
-          <div class="flex flex-col md:flex-row justify-between items-center">
+      <footer class="footer footer-center p-8 bg-neutral text-neutral-content">
+        <div class="container mx-auto">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center w-full"
+          >
             <div class="flex items-center mb-4 md:mb-0">
-              <a href="/" class="flex items-center">
-                <span class="font-medium">Finntegrate</span>
-              </a>
+              <a href="/" class="font-medium">Finntegrate</a>
             </div>
             <div class="text-sm">
               <p>© 2025 Finntegrate. An open-source project.</p>
