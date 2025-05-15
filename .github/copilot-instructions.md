@@ -42,3 +42,14 @@ import { Icon } from 'astro-icon/components'
 ### Context7
 
 - Use the `context7` model context protocol provider to get the most recent documentation for project dependencies.
+
+### Tailwind CSS and daisyUI
+
+We configure Tailwind CSS and daisyUI in our global.css file like so:
+
+```css
+@import "tailwindcss";
+@plugin 'daisyui';
+```
+
+Do not remove those configuration options, as they are the official way to configure Tailwind CSS and daisyUI. If you need to add custom styles, do so in the `global.css` file, but keep the configuration options intact.
