@@ -1,5 +1,6 @@
 ---
 import Navigation from "../components/Navigation.astro";
+import ReducedMotionToggle from "../components/ReducedMotionToggle.astro";
 import background from "../assets/background.svg";
 import "../styles/global.css";
 ---
@@ -9,9 +10,18 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Finntegrate - Making Finnish immigration processes more accessible through AI-powered, multilingual guidance." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Finntegrate - Simplifying Finnish Bureaucracy</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" />
+    <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js" />
+    
+    <!-- Three.js and Vanta.js scripts -->
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
   </head>
   <body>
     <div
@@ -27,6 +37,9 @@ import "../styles/global.css";
 
       <!-- Navigation -->
       <Navigation />
+      
+      <!-- Accessibility toggle for reduced motion -->
+      <ReducedMotionToggle />
 
       <!-- Main content -->
       <slot />
@@ -47,6 +60,63 @@ import "../styles/global.css";
         </div>
       </footer>
     </div>
+    <!-- Initialize Vanta.js on hero section with improved accessibility -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof VANTA !== 'undefined' && document.getElementById('hero-vanta')) {
+          // Get reduced motion preference
+          const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches || 
+            localStorage.getItem('reduced-motion') === 'true';
+          
+          // Configure Vanta with accessibility in mind
+          window.vantaEffect = VANTA.NET({
+            el: "#hero-vanta",
+            mouseControls: !prefersReducedMotion,
+            touchControls: !prefersReducedMotion,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3b82f6, // Primary color
+            backgroundColor: 0x111827, // Dark background
+            points: prefersReducedMotion ? 4 : 12,
+            maxDistance: prefersReducedMotion ? 10.00 : 22.00,
+            spacing: prefersReducedMotion ? 20.00 : 14.00,
+            speed: prefersReducedMotion ? 0.3 : 1.0
+          });
+          
+          // Listen for changes in user preference
+          window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', (e) => {
+            if (window.vantaEffect) {
+              if (e.matches) {
+                // Apply reduced motion settings
+                window.vantaEffect.setOptions({
+                  mouseControls: false,
+                  touchControls: false,
+                  points: 4,
+                  maxDistance: 10.00,
+                  spacing: 20.00,
+                  speed: 0.3
+                });
+              } else {
+                // Restore normal settings if no localStorage override
+                if (localStorage.getItem('reduced-motion') !== 'true') {
+                  window.vantaEffect.setOptions({
+                    mouseControls: true,
+                    touchControls: true,
+                    points: 12,
+                    maxDistance: 22.00,
+                    spacing: 14.00,
+                    speed: 1.0
+                  });
+                }
+              }
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
 

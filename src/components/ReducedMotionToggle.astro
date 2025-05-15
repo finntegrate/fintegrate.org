@@ -1,0 +1,113 @@
+---
+/**
+ * ReducedMotionToggle.astro
+ * A component that provides a toggle for users to enable/disable motion effects
+ * This enhances accessibility for users who are sensitive to motion
+ */
+import { Icon } from "astro-icon/components";
+---
+
+<div 
+  class="fixed top-20 right-4 z-50 bg-base-100 bg-opacity-80 backdrop-blur-sm rounded-full p-2 shadow-md"
+  aria-labelledby="motion-toggle-label"
+>
+  <button
+    id="reduced-motion-toggle"
+    class="flex items-center gap-2 text-sm font-medium text-base-content hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+    aria-pressed="false"
+    title="Toggle reduced motion"
+  >
+    <span id="motion-toggle-label" class="sr-only">Toggle reduced motion</span>
+    <Icon
+      name="material-symbols:motion-mode"
+      class="h-5 w-5"
+      aria-hidden="true"
+    />
+  </button>
+</div>
+
+<script is:inline>
+  // Helper to get user preference
+  function getReducedMotionPreference() {
+    // Check localStorage preference
+    const savedPreference = localStorage.getItem('reduced-motion');
+    if (savedPreference) {
+      return savedPreference === 'true';
+    }
+    
+    // Check OS/browser preference
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  // Apply reduced motion settings to Vanta.js
+  function applyReducedMotion(isReduced) {
+    // Set class on body
+    document.body.classList.toggle('reduced-motion', isReduced);
+    
+    // Store preference
+    localStorage.setItem('reduced-motion', isReduced);
+    
+    // Update button state
+    const button = document.getElementById('reduced-motion-toggle');
+    if (button) {
+      button.setAttribute('aria-pressed', isReduced.toString());
+    }
+    
+    // If Vanta is active
+    if (window.vantaEffect) {
+      if (isReduced) {
+        window.vantaEffect.setOptions({
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
+          minHeight: 200,
+          minWidth: 200,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          points: 4,  // Fewer points for less motion
+          maxDistance: 10.00,
+          spacing: 20.00,
+          speed: 0.3  // Slower animation
+        });
+      } else {
+        window.vantaEffect.setOptions({
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200,
+          minWidth: 200,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          points: 12,
+          maxDistance: 22.00,
+          spacing: 14.00,
+          speed: 1.0  // Normal animation
+        });
+      }
+    }
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const isReduced = getReducedMotionPreference();
+    applyReducedMotion(isReduced);
+    
+    // Add toggle functionality
+    const button = document.getElementById('reduced-motion-toggle');
+    if (button) {
+      button.addEventListener('click', () => {
+        const currentState = button.getAttribute('aria-pressed') === 'true';
+        applyReducedMotion(!currentState);
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Style modifications for when reduced motion is active */
+  :global(body.reduced-motion) #hero-vanta {
+    transition: none !important;
+    animation: none !important;
+    opacity: 0.4 !important;
+  }
+</style>
