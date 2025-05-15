@@ -18,24 +18,22 @@ import { Icon } from "astro-icon/components";
   </head>
 
   <!-- Hero Section with Vanta.js -->
-  <section 
-    id="hero" 
+  <section
+    id="hero"
     class="relative isolate py-20"
     aria-labelledby="hero-heading"
   >
     <!-- Vanta.js container with overlay for accessibility -->
-    <div 
-      id="hero-vanta" 
-      class="absolute inset-0 z-[-1]" 
-      aria-hidden="true"
-    ></div>
-    
+    <div id="hero-vanta" class="absolute inset-0 z-[-1]" aria-hidden="true">
+    </div>
+
     <!-- Accessibility overlay to ensure text contrast -->
-    <div 
-      class="absolute inset-0 bg-gradient-to-b from-black/50 to-primary/30 z-[-1]" 
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-black/50 to-primary/30 z-[-1]"
       aria-hidden="true"
-    ></div>
-    
+    >
+    </div>
+
     <div class="hero-content text-center relative z-10">
       <div class="max-w-4xl">
         <h1
@@ -50,7 +48,10 @@ import { Icon } from "astro-icon/components";
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <a href="/about" class="btn btn-primary"> Learn About Our Mission </a>
-          <a href="#contact" class="btn btn-outline btn-secondary bg-white/10 text-white border-white hover:bg-white hover:text-primary">
+          <a
+            href="#contact"
+            class="btn btn-outline btn-secondary bg-white/10 text-white border-white hover:bg-white hover:text-primary"
+          >
             Partner With Us
           </a>
         </div>

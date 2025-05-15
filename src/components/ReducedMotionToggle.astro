@@ -7,7 +7,7 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<div 
+<div
   class="fixed top-20 right-4 z-50 bg-base-100 bg-opacity-80 backdrop-blur-sm rounded-full p-2 shadow-md"
   aria-labelledby="motion-toggle-label"
 >
@@ -30,29 +30,29 @@ import { Icon } from "astro-icon/components";
   // Helper to get user preference
   function getReducedMotionPreference() {
     // Check localStorage preference
-    const savedPreference = localStorage.getItem('reduced-motion');
+    const savedPreference = localStorage.getItem("reduced-motion");
     if (savedPreference) {
-      return savedPreference === 'true';
+      return savedPreference === "true";
     }
-    
+
     // Check OS/browser preference
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
 
   // Apply reduced motion settings to Vanta.js
   function applyReducedMotion(isReduced) {
     // Set class on body
-    document.body.classList.toggle('reduced-motion', isReduced);
-    
+    document.body.classList.toggle("reduced-motion", isReduced);
+
     // Store preference
-    localStorage.setItem('reduced-motion', isReduced);
-    
+    localStorage.setItem("reduced-motion", isReduced);
+
     // Update button state
-    const button = document.getElementById('reduced-motion-toggle');
+    const button = document.getElementById("reduced-motion-toggle");
     if (button) {
-      button.setAttribute('aria-pressed', isReduced.toString());
+      button.setAttribute("aria-pressed", isReduced.toString());
     }
-    
+
     // If Vanta is active
     if (window.vantaEffect) {
       if (isReduced) {
@@ -62,12 +62,12 @@ import { Icon } from "astro-icon/components";
           gyroControls: false,
           minHeight: 200,
           minWidth: 200,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          points: 4,  // Fewer points for less motion
-          maxDistance: 10.00,
-          spacing: 20.00,
-          speed: 0.3  // Slower animation
+          scale: 1.0,
+          scaleMobile: 1.0,
+          points: 4, // Fewer points for less motion
+          maxDistance: 10.0,
+          spacing: 20.0,
+          speed: 0.3, // Slower animation
         });
       } else {
         window.vantaEffect.setOptions({
@@ -76,27 +76,27 @@ import { Icon } from "astro-icon/components";
           gyroControls: false,
           minHeight: 200,
           minWidth: 200,
-          scale: 1.00,
-          scaleMobile: 1.00,
+          scale: 1.0,
+          scaleMobile: 1.0,
           points: 12,
-          maxDistance: 22.00,
-          spacing: 14.00,
-          speed: 1.0  // Normal animation
+          maxDistance: 22.0,
+          spacing: 14.0,
+          speed: 1.0, // Normal animation
         });
       }
     }
   }
 
   // Initialize on page load
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const isReduced = getReducedMotionPreference();
     applyReducedMotion(isReduced);
-    
+
     // Add toggle functionality
-    const button = document.getElementById('reduced-motion-toggle');
+    const button = document.getElementById("reduced-motion-toggle");
     if (button) {
-      button.addEventListener('click', () => {
-        const currentState = button.getAttribute('aria-pressed') === 'true';
+      button.addEventListener("click", () => {
+        const currentState = button.getAttribute("aria-pressed") === "true";
         applyReducedMotion(!currentState);
       });
     }
