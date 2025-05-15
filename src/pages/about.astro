@@ -4,12 +4,12 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Mission & Vision | Finntegrate">
-  <div class="bg-gray-50">
+  <div class="bg-base-200">
     <!-- Hero Section -->
     <section class="relative overflow-hidden">
       <!-- Background gradient shapes - contained within the hero section -->
       <div
-        class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50 via-transparent to-pink-50 opacity-70"
+        class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-70"
         aria-hidden="true"
       >
       </div>
@@ -28,15 +28,14 @@ import { Icon } from "astro-icon/components";
           >
             Our Mission & Vision
           </h1>
-          <p class="text-xl md:text-2xl text-gray-700 mb-10 max-w-2xl mx-auto">
+          <p
+            class="text-xl md:text-2xl text-base-content/70 mb-10 max-w-2xl mx-auto"
+          >
             Connecting immigrants with the information they need to navigate
             Finnish administrative processes with confidence.
           </p>
           <div class="flex justify-center space-x-4 mt-8">
-            <a
-              href="/"
-              class="px-6 py-2 bg-white bg-opacity-80 hover:bg-opacity-100 text-blue-600 font-medium rounded-lg border border-blue-100 hover:shadow-md transition-all flex items-center"
-            >
+            <a href="/" class="btn btn-outline btn-primary flex items-center">
               <Icon
                 name="mdi:arrow-left"
                 class="h-5 w-5 mr-2"
@@ -50,7 +49,7 @@ import { Icon } from "astro-icon/components";
     </section>
 
     <!-- Mission Section -->
-    <section class="bg-white py-16">
+    <section class="bg-base-100 py-16">
       <div class="max-w-6xl mx-auto px-4">
         <div class="max-w-3xl mx-auto">
           <h2 class="text-3xl font-bold mb-8 text-center">Our Mission</h2>
@@ -115,7 +114,7 @@ import { Icon } from "astro-icon/components";
     </section>
 
     <!-- Vision Section -->
-    <section class="bg-gradient-to-br from-blue-50 to-pink-50 py-16">
+    <section class="bg-gradient-to-br from-primary/5 to-secondary/5 py-16">
       <div class="max-w-6xl mx-auto px-4">
         <div class="max-w-3xl mx-auto">
           <h2 class="text-3xl font-bold mb-8 text-center">Our Vision</h2>
@@ -209,259 +208,255 @@ import { Icon } from "astro-icon/components";
     </section>
 
     <!-- Core Values Section -->
-    <section class="bg-white py-16">
+    <section class="bg-base-100 py-16">
       <div class="max-w-6xl mx-auto px-4">
         <div class="max-w-3xl mx-auto">
           <h2 class="text-3xl font-bold mb-8 text-center">Our Core Values</h2>
 
           <div class="grid gap-6 md:grid-cols-2">
-            <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
-              <div
-                class="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4"
-              >
-                <Icon
-                  name="mdi:account-group"
-                  class="h-6 w-6 text-blue-600"
-                  aria-hidden="true"
-                />
+            <div class="card bg-base-200 shadow-sm">
+              <div class="card-body">
+                <div class="avatar">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center"
+                  >
+                    <Icon
+                      name="mdi:account-group"
+                      class="h-6 w-6 text-primary"
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+                <h3 class="card-title">People-Centered</h3>
+                <p class="text-base-content/70">
+                  We design our solutions based on real immigrant needs, not
+                  administrative convenience. Every decision starts with "How
+                  will this help immigrants accomplish their goals?"
+                </p>
               </div>
-              <h3 class="text-xl font-bold mb-2">People-Centered</h3>
-              <p class="text-gray-700">
-                We design our solutions based on real immigrant needs, not
-                administrative convenience. Every decision starts with "How will
-                this help immigrants accomplish their goals?"
-              </p>
-            </div>
 
-            <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
-              <div
-                class="h-12 w-12 bg-purple-100 rounded-full flex items-center justify-center mb-4"
-              >
-                <Icon
-                  name="mdi:translate"
-                  class="h-6 w-6 text-purple-600"
-                  aria-hidden="true"
-                />
+              <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                <div
+                  class="h-12 w-12 bg-purple-100 rounded-full flex items-center justify-center mb-4"
+                >
+                  <Icon
+                    name="mdi:translate"
+                    class="h-6 w-6 text-purple-600"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2">Inclusive</h3>
+                <p class="text-gray-700">
+                  We strive to make information accessible regardless of
+                  language, technical ability, or prior knowledge of Finnish
+                  systems. No one should be left behind.
+                </p>
               </div>
-              <h3 class="text-xl font-bold mb-2">Inclusive</h3>
-              <p class="text-gray-700">
-                We strive to make information accessible regardless of language,
-                technical ability, or prior knowledge of Finnish systems. No one
-                should be left behind.
-              </p>
-            </div>
 
-            <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
-              <div
-                class="h-12 w-12 bg-green-100 rounded-full flex items-center justify-center mb-4"
-              >
-                <Icon
-                  name="mdi:shield-check-outline"
-                  class="h-6 w-6 text-green-600"
-                  aria-hidden="true"
-                />
+              <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                <div
+                  class="h-12 w-12 bg-green-100 rounded-full flex items-center justify-center mb-4"
+                >
+                  <Icon
+                    name="mdi:shield-check-outline"
+                    class="h-6 w-6 text-green-600"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2">Trustworthy</h3>
+                <p class="text-gray-700">
+                  We prioritize accuracy, transparency, and privacy. We only
+                  provide verified information from official sources and clearly
+                  communicate the limitations of our system.
+                </p>
               </div>
-              <h3 class="text-xl font-bold mb-2">Trustworthy</h3>
-              <p class="text-gray-700">
-                We prioritize accuracy, transparency, and privacy. We only
-                provide verified information from official sources and clearly
-                communicate the limitations of our system.
-              </p>
-            </div>
 
-            <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
-              <div
-                class="h-12 w-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4"
-              >
-                <Icon
-                  name="mdi:flask"
-                  class="h-6 w-6 text-yellow-600"
-                  aria-hidden="true"
-                />
+              <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                <div
+                  class="h-12 w-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4"
+                >
+                  <Icon
+                    name="mdi:flask"
+                    class="h-6 w-6 text-yellow-600"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2">Innovative</h3>
+                <p class="text-gray-700">
+                  We apply new technology and research to solve longstanding
+                  problems. We continuously improve our tools through testing
+                  and feedback.
+                </p>
               </div>
-              <h3 class="text-xl font-bold mb-2">Innovative</h3>
-              <p class="text-gray-700">
-                We apply new technology and research to solve longstanding
-                problems. We continuously improve our tools through testing and
-                feedback.
-              </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Approach Section -->
-    <section class="bg-gradient-to-br from-blue-50 to-pink-50 py-16">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="max-w-3xl mx-auto">
-          <h2 class="text-3xl font-bold mb-8 text-center">Our Approach</h2>
+      <!-- Approach Section -->
+      <section class="bg-gradient-to-br from-primary/5 to-secondary/5 py-16">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Our Approach</h2>
 
-          <div class="prose prose-lg max-w-none">
-            <p>
-              Finntegrate combines thoughtful design with technology to address
-              the unique challenges immigrants face when dealing with Finnish
-              administrative systems.
+            <div class="prose prose-lg max-w-none">
+              <p>
+                Finntegrate combines thoughtful design with technology to
+                address the unique challenges immigrants face when dealing with
+                Finnish administrative systems.
+              </p>
+
+              <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+                <h3 class="text-xl font-bold mb-4">Understanding User Needs</h3>
+                <p>
+                  We study how people actually look for and use information in
+                  real-life situations, focusing on what works best for
+                  newcomers to Finland.
+                </p>
+                <ul class="mt-4 space-y-2">
+                  <li class="flex items-start">
+                    <Icon
+                      name="mdi:arrow-right"
+                      class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
+                    />
+                    <span
+                      ><strong>Task Breakdown:</strong> Dividing complex processes
+                      into simpler, manageable steps</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <Icon
+                      name="mdi:arrow-right"
+                      class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
+                    />
+                    <span
+                      ><strong>Finding Obstacles:</strong> Identifying what gets
+                      in the way when immigrants need information</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <Icon
+                      name="mdi:arrow-right"
+                      class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
+                    />
+                    <span
+                      ><strong>Timely Information:</strong> Providing the right information
+                      when it's needed, in a useful format</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+                <h3 class="text-xl font-bold mb-4">Technology We Use</h3>
+                <p>
+                  We combine AI, language processing, and knowledge systems to
+                  create tools that understand what immigrants need and provide
+                  helpful guidance:
+                </p>
+                <ul class="mt-4 space-y-2">
+                  <li class="flex items-start">
+                    <Icon
+                      name="mdi:arrow-right"
+                      class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
+                    />
+                    <span
+                      ><strong>Smart Information Retrieval:</strong> Finding accurate
+                      information from official sources</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <Icon
+                      name="mdi:arrow-right"
+                      class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
+                    />
+                    <span
+                      ><strong>AI Helpers:</strong> Specialized tools working together
+                      to solve complex questions</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <Icon
+                      name="mdi:arrow-right"
+                      class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
+                    />
+                    <span
+                      ><strong>Multilingual Support:</strong> Breaking down language
+                      barriers so everyone can understand</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
+                <h3 class="text-xl font-bold mb-4">How We Work</h3>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <Icon
+                      name="mdi:arrow-right"
+                      class="h-6 w-6 text-indigo-500 mr-2 flex-shrink-0"
+                    />
+                    <span
+                      ><strong>Focused Development:</strong> Building working tools
+                      rather than spending time on excessive documentation</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <Icon
+                      name="mdi:arrow-right"
+                      class="h-6 w-6 text-indigo-500 mr-2 flex-shrink-0"
+                    />
+                    <span
+                      ><strong>Quick Testing:</strong> Creating small, practical
+                      prototypes that we can improve based on feedback</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <Icon
+                      name="mdi:arrow-right"
+                      class="h-6 w-6 text-indigo-500 mr-2 flex-shrink-0"
+                    />
+                    <span
+                      ><strong>Open Source:</strong> Sharing our work publicly so
+                      others can contribute and improve it</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <Icon
+                      name="mdi:arrow-right"
+                      class="h-6 w-6 text-indigo-500 mr-2 flex-shrink-0"
+                    />
+                    <span
+                      ><strong>Community Input:</strong> Getting feedback from people
+                      who have experienced moving to Finland</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="bg-base-100 py-16">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Work With Us</h2>
+            <p class="text-xl text-gray-700 mb-8">
+              We're looking for partners, funders, and collaborators who share
+              our goal of making Finland more accessible to newcomers through
+              smart, practical tools.
             </p>
-
-            <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
-              <h3 class="text-xl font-bold mb-4">Understanding User Needs</h3>
-              <p>
-                We study how people actually look for and use information in
-                real-life situations, focusing on what works best for newcomers
-                to Finland.
-              </p>
-              <ul class="mt-4 space-y-2">
-                <li class="flex items-start">
-                  <Icon
-                    name="mdi:arrow-right"
-                    class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
-                  />
-                  <span
-                    ><strong>Task Breakdown:</strong> Dividing complex processes
-                    into simpler, manageable steps</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <Icon
-                    name="mdi:arrow-right"
-                    class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
-                  />
-                  <span
-                    ><strong>Finding Obstacles:</strong> Identifying what gets in
-                    the way when immigrants need information</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <Icon
-                    name="mdi:arrow-right"
-                    class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
-                  />
-                  <span
-                    ><strong>Timely Information:</strong> Providing the right information
-                    when it's needed, in a useful format</span
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
-              <h3 class="text-xl font-bold mb-4">Technology We Use</h3>
-              <p>
-                We combine AI, language processing, and knowledge systems to
-                create tools that understand what immigrants need and provide
-                helpful guidance:
-              </p>
-              <ul class="mt-4 space-y-2">
-                <li class="flex items-start">
-                  <Icon
-                    name="mdi:arrow-right"
-                    class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
-                  />
-                  <span
-                    ><strong>Smart Information Retrieval:</strong> Finding accurate
-                    information from official sources</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <Icon
-                    name="mdi:arrow-right"
-                    class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
-                  />
-                  <span
-                    ><strong>AI Helpers:</strong> Specialized tools working together
-                    to solve complex questions</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <Icon
-                    name="mdi:arrow-right"
-                    class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
-                  />
-                  <span
-                    ><strong>Multilingual Support:</strong> Breaking down language
-                    barriers so everyone can understand</span
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-sm mt-6">
-              <h3 class="text-xl font-bold mb-4">How We Work</h3>
-              <ul class="space-y-2">
-                <li class="flex items-start">
-                  <Icon
-                    name="mdi:arrow-right"
-                    class="h-6 w-6 text-indigo-500 mr-2 flex-shrink-0"
-                  />
-                  <span
-                    ><strong>Focused Development:</strong> Building working tools
-                    rather than spending time on excessive documentation</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <Icon
-                    name="mdi:arrow-right"
-                    class="h-6 w-6 text-indigo-500 mr-2 flex-shrink-0"
-                  />
-                  <span
-                    ><strong>Quick Testing:</strong> Creating small, practical prototypes
-                    that we can improve based on feedback</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <Icon
-                    name="mdi:arrow-right"
-                    class="h-6 w-6 text-indigo-500 mr-2 flex-shrink-0"
-                  />
-                  <span
-                    ><strong>Open Source:</strong> Sharing our work publicly so others
-                    can contribute and improve it</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <Icon
-                    name="mdi:arrow-right"
-                    class="h-6 w-6 text-indigo-500 mr-2 flex-shrink-0"
-                  />
-                  <span
-                    ><strong>Community Input:</strong> Getting feedback from people
-                    who have experienced moving to Finland</span
-                  >
-                </li>
-              </ul>
+            <div class="flex flex-wrap justify-center gap-4">
+              <a href="/" class="btn btn-primary"> Return to Home </a>
+              <a href="/#contact" class="btn btn-outline btn-primary">
+                Contact Us
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="bg-white py-16">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-6">Work With Us</h2>
-          <p class="text-xl text-gray-700 mb-8">
-            We're looking for partners, funders, and collaborators who share our
-            goal of making Finland more accessible to newcomers through smart,
-            practical tools.
-          </p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <a
-              href="/"
-              class="px-6 py-3 bg-gradient-to-r from-blue-600 to-pink-500 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all"
-            >
-              Return to Home
-            </a>
-            <a
-              href="/#contact"
-              class="px-6 py-3 bg-white text-blue-600 font-medium rounded-lg border border-blue-100 hover:bg-blue-50 transition-all"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </div>
+      </section>
     </section>
   </div>
 </Layout>

@@ -18,375 +18,358 @@ import { Icon } from "astro-icon/components";
   </head>
 
   <!-- Hero Section -->
-  <section id="hero" class="pt-20 pb-16 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1
-        class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"
-      >
-        Making Finnish Immigration Simpler
-      </h1>
-      <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-        We're building an AI-powered, multilingual guide that helps immigrants
-        find and understand the information they need when moving to Finland.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a
-          href="/about"
-          class="px-6 py-3 bg-gradient-to-r from-blue-600 to-pink-500 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all"
+  <section id="hero" class="hero py-20">
+    <div class="hero-content text-center">
+      <div class="max-w-4xl">
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
         >
-          Learn About Our Mission
-        </a>
-        <a
-          href="#contact"
-          class="px-6 py-3 bg-white bg-opacity-80 text-blue-600 font-medium rounded-lg border border-blue-100 hover:bg-blue-50 transition-all"
-        >
-          Partner With Us
-        </a>
+          Making Finnish Immigration Simpler
+        </h1>
+        <p class="py-6 text-xl md:text-2xl text-base-content/70">
+          We're building an AI-powered, multilingual guide that helps immigrants
+          find and understand the information they need when moving to Finland.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/about" class="btn btn-primary"> Learn About Our Mission </a>
+          <a href="#contact" class="btn btn-outline btn-primary">
+            Partner With Us
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Problem Section -->
-  <section id="problem" class="py-16 px-4 bg-white bg-opacity-90">
-    <div class="max-w-6xl mx-auto">
+  <section id="problem" class="py-16 bg-base-100 bg-opacity-90">
+    <div class="container mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">The Information Challenge</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold">The Information Challenge</h2>
+        <p class="text-xl text-base-content/70 max-w-3xl mx-auto mt-4">
           Moving to a new country is complicated. Finding the right information
           shouldn't be.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-blue-50 p-8 rounded-xl shadow-sm">
-          <h3 class="text-xl font-semibold mb-4 text-blue-700">
-            Common Hurdles
-          </h3>
-          <ul class="space-y-3 text-gray-700">
-            <li class="flex items-start">
-              <Icon
-                name="mdi:flowchart"
-                class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
-                aria-hidden="true"
-              />
-              <span
-                ><strong>Complex processes</strong> that change frequently and require
-                specific steps</span
-              >
-            </li>
-            <li class="flex items-start">
-              <Icon
-                name="mdi:translate"
-                class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
-                aria-hidden="true"
-              />
-              <span
-                ><strong>Unfamiliar terms and systems</strong> that are hard to understand
-                without guidance</span
-              >
-            </li>
-            <li class="flex items-start">
-              <Icon
-                name="mdi:laptop"
-                class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
-                aria-hidden="true"
-              />
-              <span
-                ><strong>Online services</strong> that can be difficult to find and
-                use</span
-              >
-            </li>
-            <li class="flex items-start">
-              <Icon
-                name="mdi:web"
-                class="h-6 w-6 text-blue-500 mr-2 flex-shrink-0"
-                aria-hidden="true"
-              />
-              <span
-                ><strong>Information spread across many websites</strong> from different
-                government offices</span
-              >
-            </li>
-          </ul>
+        <div class="card bg-primary/10">
+          <div class="card-body">
+            <h3 class="card-title text-primary">Common Hurdles</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <Icon
+                  name="mdi:flowchart"
+                  class="h-6 w-6 text-primary mr-2 flex-shrink-0"
+                  aria-hidden="true"
+                />
+                <span
+                  ><strong>Complex processes</strong> that change frequently and
+                  require specific steps</span
+                >
+              </li>
+              <li class="flex items-start">
+                <Icon
+                  name="mdi:translate"
+                  class="h-6 w-6 text-primary mr-2 flex-shrink-0"
+                  aria-hidden="true"
+                />
+                <span
+                  ><strong>Unfamiliar terms and systems</strong> that are hard to
+                  understand without guidance</span
+                >
+              </li>
+              <li class="flex items-start">
+                <Icon
+                  name="mdi:laptop"
+                  class="h-6 w-6 text-primary mr-2 flex-shrink-0"
+                  aria-hidden="true"
+                />
+                <span
+                  ><strong>Online services</strong> that can be difficult to find
+                  and use</span
+                >
+              </li>
+              <li class="flex items-start">
+                <Icon
+                  name="mdi:web"
+                  class="h-6 w-6 text-primary mr-2 flex-shrink-0"
+                  aria-hidden="true"
+                />
+                <span
+                  ><strong>Information spread across many websites</strong> from
+                  different government offices</span
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="bg-pink-50 p-8 rounded-xl shadow-sm">
-          <h3 class="text-xl font-semibold mb-4 text-pink-700">
-            Why It Happens
-          </h3>
-          <ul class="space-y-3 text-gray-700">
-            <li class="flex items-start">
-              <Icon
-                name="material-symbols:procedure"
-                class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
-                aria-hidden="true"
-              />
-              <span
-                >Information is organized around <strong
-                  >official processes</strong
-                > rather than what newcomers need to know</span
-              >
-            </li>
-            <li class="flex items-start">
-              <Icon
-                name="material-symbols:category-search"
-                class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
-                aria-hidden="true"
-              />
-              <span
-                >Search tools often require <strong>exact official terms</strong
-                > instead of everyday language</span
-              >
-            </li>
-            <li class="flex items-start">
-              <Icon
-                name="material-symbols:account-tree"
-                class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
-              />
-              <span
-                ><strong>Different agencies</strong> handle different parts of the
-                process, making it hard to see the complete picture</span
-              >
-            </li>
-            <li class="flex items-start">
-              <Icon
-                name="material-symbols:person-off"
-                class="h-6 w-6 text-pink-500 mr-2 flex-shrink-0"
-              />
-              <span
-                >Systems are designed from the <strong
-                  >service provider's perspective</strong
-                > rather than the newcomer's needs</span
-              >
-            </li>
-          </ul>
+        <div class="card bg-secondary/10">
+          <div class="card-body">
+            <h3 class="card-title text-secondary">Why It Happens</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <Icon
+                  name="material-symbols:procedure"
+                  class="h-6 w-6 text-secondary mr-2 flex-shrink-0"
+                  aria-hidden="true"
+                />
+                <span
+                  >Information is organized around <strong
+                    >official processes</strong
+                  > rather than what newcomers need to know</span
+                >
+              </li>
+              <li class="flex items-start">
+                <Icon
+                  name="material-symbols:category-search"
+                  class="h-6 w-6 text-secondary mr-2 flex-shrink-0"
+                  aria-hidden="true"
+                />
+                <span
+                  >Search tools often require <strong
+                    >exact official terms</strong
+                  > instead of everyday language</span
+                >
+              </li>
+              <li class="flex items-start">
+                <Icon
+                  name="material-symbols:account-tree"
+                  class="h-6 w-6 text-secondary mr-2 flex-shrink-0"
+                />
+                <span
+                  ><strong>Different agencies</strong> handle different parts of
+                  the process, making it hard to see the complete picture</span
+                >
+              </li>
+              <li class="flex items-start">
+                <Icon
+                  name="material-symbols:person-off"
+                  class="h-6 w-6 text-secondary mr-2 flex-shrink-0"
+                />
+                <span
+                  >Systems are designed from the <strong
+                    >service provider's perspective</strong
+                  > rather than the newcomer's needs</span
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Solution Section -->
-  <section id="solution" class="py-16 px-4">
-    <div class="max-w-6xl mx-auto">
+  <section id="solution" class="py-16">
+    <div class="container mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Our Solution</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold">Our Solution</h2>
+        <p class="text-xl text-base-content/70 max-w-3xl mx-auto mt-4">
           We're building a tool that puts your needs first, making it easier to
           find and understand Finnish immigration information.
         </p>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
-        <div
-          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
-        >
-          <div
-            class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
-          >
-            <Icon
-              name="mdi:magnify"
-              class="h-6 w-6 text-blue-600"
-              aria-hidden="true"
-            />
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body">
+            <div class="avatar">
+              <div
+                class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center"
+              >
+                <Icon
+                  name="mdi:magnify"
+                  class="h-6 w-6 text-primary"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+            <h3 class="card-title">Practical, Task-Based Help</h3>
+            <p>
+              We focus on what you're trying to do, not just what the system
+              requires, so you can complete important tasks successfully.
+            </p>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Practical, Task-Based Help</h3>
-          <p class="text-gray-600">
-            We focus on what you're trying to do, not just what the system
-            requires, so you can complete important tasks successfully.
-          </p>
         </div>
-        <div
-          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
-        >
-          <div
-            class="h-12 w-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4"
-          >
-            <Icon
-              name="mdi:chat"
-              class="h-6 w-6 text-pink-600"
-              aria-hidden="true"
-            />
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body">
+            <div class="avatar">
+              <div
+                class="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center"
+              >
+                <Icon
+                  name="mdi:chat"
+                  class="h-6 w-6 text-secondary"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+            <h3 class="card-title">Talk Like a Human</h3>
+            <p>
+              Ask questions in your own words, not official terminology. Our
+              system understands what you mean, not just what you say.
+            </p>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Talk Like a Human</h3>
-          <p class="text-gray-600">
-            Ask questions in your own words, not official terminology. Our
-            system understands what you mean, not just what you say.
-          </p>
         </div>
-        <div
-          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
-        >
-          <div
-            class="h-12 w-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4"
-          >
-            <Icon
-              name="mdi:earth"
-              class="h-6 w-6 text-purple-600"
-              aria-hidden="true"
-            />
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body">
+            <div class="avatar">
+              <div
+                class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center"
+              >
+                <Icon
+                  name="mdi:earth"
+                  class="h-6 w-6 text-accent"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+            <h3 class="card-title">Your Language, Not Ours</h3>
+            <p>
+              Get help in your preferred language, not just Finnish or English,
+              making complex information more accessible.
+            </p>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Your Language, Not Ours</h3>
-          <p class="text-gray-600">
-            Get help in your preferred language, not just Finnish or English,
-            making complex information more accessible.
-          </p>
         </div>
-        <div
-          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
-        >
-          <div
-            class="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center mb-4"
-          >
-            <Icon
-              name="mdi:lightning-bolt"
-              class="h-6 w-6 text-green-600"
-              aria-hidden="true"
-            />
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body">
+            <div class="avatar">
+              <div
+                class="w-12 h-12 rounded-lg bg-success/20 flex items-center justify-center"
+              >
+                <Icon
+                  name="mdi:lightning-bolt"
+                  class="h-6 w-6 text-success"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+            <h3 class="card-title">Smart, AI-Powered Help</h3>
+            <p>
+              Our system finds the right information from official sources and
+              explains it clearly, in a way that makes sense for your situation.
+            </p>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Smart, AI-Powered Help</h3>
-          <p class="text-gray-600">
-            Our system finds the right information from official sources and
-            explains it clearly, in a way that makes sense for your situation.
-          </p>
         </div>
-        <div
-          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
-        >
-          <div
-            class="h-12 w-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4"
-          >
-            <Icon
-              name="mdi:file-document-outline"
-              class="h-6 w-6 text-yellow-600"
-              aria-hidden="true"
-            />
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body">
+            <div class="avatar">
+              <div
+                class="w-12 h-12 rounded-lg bg-warning/20 flex items-center justify-center"
+              >
+                <Icon
+                  name="mdi:file-document-outline"
+                  class="h-6 w-6 text-warning"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+            <h3 class="card-title">Connecting the Dots</h3>
+            <p>
+              We bring together information from different agencies so you can
+              see the whole picture, not just one piece at a time.
+            </p>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Connecting the Dots</h3>
-          <p class="text-gray-600">
-            We bring together information from different agencies so you can see
-            the whole picture, not just one piece at a time.
-          </p>
         </div>
-        <div
-          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all"
-        >
-          <div
-            class="h-12 w-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4"
-          >
-            <Icon
-              name="mdi:shield-check-outline"
-              class="h-6 w-6 text-indigo-600"
-              aria-hidden="true"
-            />
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body">
+            <div class="avatar">
+              <div
+                class="w-12 h-12 rounded-lg bg-info/20 flex items-center justify-center"
+              >
+                <Icon
+                  name="mdi:shield-check-outline"
+                  class="h-6 w-6 text-info"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+            <h3 class="card-title">Your Privacy First</h3>
+            <p>
+              We help without collecting your personal information. We don't
+              store your data or ask for sensitive details.
+            </p>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Your Privacy First</h3>
-          <p class="text-gray-600">
-            We help without collecting your personal information. We don't store
-            your data or ask for sensitive details.
-          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Project Status -->
-  <section id="status" class="py-16 px-4 bg-white bg-opacity-90">
-    <div class="max-w-6xl mx-auto">
+  <section id="status" class="py-16 bg-base-100 bg-opacity-90">
+    <div class="container mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Where We Are Now</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold">Where We Are Now</h2>
+        <p class="text-xl text-base-content/70 max-w-3xl mx-auto mt-4">
           Finntegrate is an active project with several key milestones already
           completed.
         </p>
       </div>
 
-      <div class="relative border-l-4 border-blue-500 ml-4 md:ml-8 pl-6 pb-2">
+      <div class="timeline timeline-vertical ml-4 md:ml-8">
         <!-- Timeline items -->
-        <div class="mb-10 relative">
-          <div
-            class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-blue-500 border-4 border-white"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
-            <h3 class="text-lg font-semibold text-blue-700">
-              Core Information System
-            </h3>
-            <span
-              class="inline-block px-3 py-1 text-sm font-medium bg-green-100 text-green-800 rounded-full mb-2"
-              >Completed</span
-            >
-            <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-              <li>Collected information from official websites</li>
-              <li>Created a searchable database with relevant filters</li>
-              <li>Built tools to find the right information quickly</li>
-              <li>Developed a simple chat interface</li>
-              <li>Added support for multiple languages</li>
-            </ul>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="card bg-primary/10 mb-6">
+            <div class="card-body">
+              <h3 class="card-title text-primary">Core Information System</h3>
+              <div class="badge badge-success mb-2">Completed</div>
+              <ul class="list-disc list-inside space-y-1">
+                <li>Collected information from official websites</li>
+                <li>Created a searchable database with relevant filters</li>
+                <li>Built tools to find the right information quickly</li>
+                <li>Developed a simple chat interface</li>
+                <li>Added support for multiple languages</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div class="mb-10 relative">
-          <div
-            class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-blue-500 border-4 border-white"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
-            <h3 class="text-lg font-semibold text-blue-700">
-              Advanced Features
-            </h3>
-            <span
-              class="inline-block px-3 py-1 text-sm font-medium bg-blue-100 text-blue-800 rounded-full mb-2"
-              >In Progress</span
-            >
-            <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-              <li>Understanding what users need at each step</li>
-              <li>Creating specialized helpers for different situations</li>
-              <li>
-                Building tools for specific scenarios like permit interviews
-              </li>
-              <li>Connecting information from different government sources</li>
-            </ul>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="card bg-primary/10 mb-6">
+            <div class="card-body">
+              <h3 class="card-title text-primary">Advanced Features</h3>
+              <div class="badge badge-primary mb-2">In Progress</div>
+              <ul class="list-disc list-inside space-y-1">
+                <li>Understanding what users need at each step</li>
+                <li>Creating specialized helpers for different situations</li>
+                <li>
+                  Building tools for specific scenarios like permit interviews
+                </li>
+                <li>
+                  Connecting information from different government sources
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div class="mb-10 relative">
-          <div
-            class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-gray-300 border-4 border-white"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-            <h3 class="text-lg font-semibold text-gray-700">
-              Technical Improvements
-            </h3>
-            <span
-              class="inline-block px-3 py-1 text-sm font-medium bg-gray-200 text-gray-800 rounded-full mb-2"
-              >Planned</span
-            >
-            <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-              <li>Making the system more flexible and expandable</li>
-              <li>Creating ways for other services to connect with ours</li>
-              <li>Improving the design based on user feedback</li>
-            </ul>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="card bg-base-200 mb-6">
+            <div class="card-body">
+              <h3 class="card-title">Technical Improvements</h3>
+              <div class="badge badge-outline mb-2">Planned</div>
+              <ul class="list-disc list-inside space-y-1">
+                <li>Making the system more flexible and expandable</li>
+                <li>Creating ways for other services to connect with ours</li>
+                <li>Improving the design based on user feedback</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div class="relative">
-          <div
-            class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full bg-gray-300 border-4 border-white"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-            <h3 class="text-lg font-semibold text-gray-700">User Research</h3>
-            <span
-              class="inline-block px-3 py-1 text-sm font-medium bg-gray-200 text-gray-800 rounded-full mb-2"
-              >Planned</span
-            >
-            <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-              <li>Asking immigrants what help they need most</li>
-              <li>Getting feedback from the community</li>
-              <li>Learning how people search for immigration information</li>
-            </ul>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="card bg-base-200">
+            <div class="card-body">
+              <h3 class="card-title">User Research</h3>
+              <div class="badge badge-outline mb-2">Planned</div>
+              <ul class="list-disc list-inside space-y-1">
+                <li>Asking immigrants what help they need most</li>
+                <li>Getting feedback from the community</li>
+                <li>Learning how people search for immigration information</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -394,54 +377,56 @@ import { Icon } from "astro-icon/components";
   </section>
 
   <!-- Partnership Section -->
-  <section id="team" class="py-16 px-4">
-    <div class="max-w-6xl mx-auto">
+  <section id="team" class="py-16">
+    <div class="container mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Working Together</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold">Working Together</h2>
+        <p class="text-xl text-base-content/70 max-w-3xl mx-auto mt-4">
           Finntegrate is built by people who've moved to Finland themselves. We
           know firsthand how challenging it can be.
         </p>
       </div>
 
-      <div class="mt-12 bg-blue-50 p-8 rounded-xl shadow-sm max-w-3xl mx-auto">
-        <h3 class="text-xl font-semibold mb-4 text-center">Partner With Us</h3>
-        <p class="text-gray-700 mb-6">
-          We're looking for partners who want to help make Finland more
-          accessible to newcomers:
-        </p>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div class="flex items-center">
-            <Icon
-              name="material-symbols:info"
-              class="h-5 w-5 text-blue-500 mr-2"
-              aria-hidden="true"
-            />
-            <span>Information Specialists</span>
-          </div>
-          <div class="flex items-center">
-            <Icon
-              name="mdi:pillar"
-              class="h-5 w-5 text-blue-500 mr-2"
-              aria-hidden="true"
-            />
-            <span>Government Agencies</span>
-          </div>
-          <div class="flex items-center">
-            <Icon
-              name="material-symbols:diversity-3"
-              class="h-5 w-5 text-blue-500 mr-2"
-              aria-hidden="true"
-            />
-            <span>Immigrant Support Groups</span>
-          </div>
-          <div class="flex items-center">
-            <Icon
-              name="material-symbols:payments"
-              class="h-5 w-5 text-blue-500 mr-2"
-              aria-hidden="true"
-            />
-            <span>Funding Organizations</span>
+      <div class="card bg-primary/10 shadow-sm max-w-3xl mx-auto">
+        <div class="card-body">
+          <h3 class="card-title justify-center">Partner With Us</h3>
+          <p class="text-center mb-6">
+            We're looking for partners who want to help make Finland more
+            accessible to newcomers:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="flex items-center">
+              <Icon
+                name="material-symbols:info"
+                class="h-5 w-5 text-primary mr-2"
+                aria-hidden="true"
+              />
+              <span>Information Specialists</span>
+            </div>
+            <div class="flex items-center">
+              <Icon
+                name="mdi:pillar"
+                class="h-5 w-5 text-primary mr-2"
+                aria-hidden="true"
+              />
+              <span>Government Agencies</span>
+            </div>
+            <div class="flex items-center">
+              <Icon
+                name="material-symbols:diversity-3"
+                class="h-5 w-5 text-primary mr-2"
+                aria-hidden="true"
+              />
+              <span>Immigrant Support Groups</span>
+            </div>
+            <div class="flex items-center">
+              <Icon
+                name="material-symbols:payments"
+                class="h-5 w-5 text-primary mr-2"
+                aria-hidden="true"
+              />
+              <span>Funding Organizations</span>
+            </div>
           </div>
         </div>
       </div>
@@ -451,42 +436,42 @@ import { Icon } from "astro-icon/components";
   <!-- Contact/CTA -->
   <section
     id="contact"
-    class="py-16 px-4 bg-gradient-to-br from-blue-600 to-pink-500 text-white"
+    class="py-16 bg-gradient-to-br from-primary to-secondary text-white"
   >
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Join Our Mission</h2>
-      <p class="text-xl mb-8">
-        Help us make moving to Finland smoother for everyone. Together, we can
-        create a better experience for newcomers.
-      </p>
+    <div class="hero">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h2 class="text-3xl font-bold">Join Our Mission</h2>
+          <p class="py-6 text-xl">
+            Help us make moving to Finland smoother for everyone. Together, we
+            can create a better experience for newcomers.
+          </p>
 
-      <div
-        class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl max-w-xl mx-auto"
-      >
-        <div class="grid gap-6 mb-6">
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Get Involved</h3>
-            <div class="grid sm:grid-cols-2 gap-4">
-              <a
-                href="https://github.com/finntegrate/migri-assistant"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center justify-center gap-2 bg-white text-blue-600 py-3 px-4 rounded-lg font-medium hover:bg-opacity-90 transition-all"
-              >
-                <Icon name="mdi:github" class="h-5 w-5" aria-hidden="true" />
-                GitHub Repository
-              </a>
-              <a
-                href="mailto:contact@finntegrate.org"
-                class="flex items-center justify-center gap-2 bg-white text-pink-600 py-3 px-4 rounded-lg font-medium hover:bg-opacity-90 transition-all"
-              >
-                <Icon
-                  name="mdi:email-outline"
-                  class="h-5 w-5"
-                  aria-hidden="true"
-                />
-                Contact Us
-              </a>
+          <div class="card bg-base-100 bg-opacity-10 backdrop-blur-sm">
+            <div class="card-body">
+              <h3 class="card-title justify-center">Get Involved</h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <a
+                  href="https://github.com/finntegrate/migri-assistant"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-outline btn-primary bg-white"
+                >
+                  <Icon name="mdi:github" class="h-5 w-5" aria-hidden="true" />
+                  GitHub Repository
+                </a>
+                <a
+                  href="mailto:contact@finntegrate.org"
+                  class="btn btn-outline btn-secondary bg-white"
+                >
+                  <Icon
+                    name="mdi:email-outline"
+                    class="h-5 w-5"
+                    aria-hidden="true"
+                  />
+                  Contact Us
+                </a>
+              </div>
             </div>
           </div>
         </div>
