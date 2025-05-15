@@ -1,2 +1,36 @@
-@import "tailwindcss";
-@plugin "daisyui";
+/* Don't remove these imports, they are required for Tailwind and daisyUI to work */
+@import 'tailwindcss';
+@plugin 'daisyui';
+
+/* Global styles */
+
+/* Accessibility styles for Vanta.js hero section */
+#hero {
+  min-height: 42vh;
+  transition: background-color 0.5s ease;
+}
+
+#hero-vanta {
+  opacity: 0.8; /* Reduce opacity for better text contrast */
+}
+
+/* Ensure text is readable regardless of background animation */
+#hero h1, 
+#hero p {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better contrast */
+}
+
+/* Focus styles for accessibility */
+a:focus-visible, 
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #hero-vanta {
+    animation: none !important;
+    transition: none !important;
+  }
+}
