@@ -5,6 +5,90 @@ import * as layoutAlgorithms from "graphology-layout";
 import * as forceAtlas2 from "graphology-layout-forceatlas2";
 
 /**
+ * Node and edge styling constants
+ */
+const COLORS = {
+    AGENT: "#3B82F6", // Blue
+    ORGANIZATION: "#10B981", // Green
+    NEED: "#F59E0B", // Yellow/Orange
+    KNOWLEDGE_EDGE: "#6B7280", // Gray
+    HIGHLIGHT: "#FF5733", // Bright orange for highlighting
+};
+
+const NODE_SIZES = {
+    ORCHESTRATOR: 15,
+    AGENT: 10,
+    ORGANIZATION: 8,
+    NEED: 7,
+};
+
+const EDGE_TYPES = {
+    COORDINATION: "coordination",
+    KNOWLEDGE: "knowledge",
+    SERVICE: "service",
+};
+
+/**
+ * Helper function to add a node to the graph with consistent styling
+ * @param {Graph} graph - The graph instance
+ * @param {string} id - Node identifier
+ * @param {object} attributes - Node attributes
+ */
+function addNode(graph, id, attributes) {
+    graph.addNode(id, {
+        ...attributes,
+        type: "circle", // All nodes use circle type
+    });
+}
+
+/**
+ * Helper function to add an edge to the graph with consistent styling
+ * @param {Graph} graph - The graph instance
+ * @param {string} source - Source node id
+ * @param {string} target - Target node id
+ * @param {string} category - Edge category
+ * @param {string} color - Edge color
+ */
+function addEdge(graph, source, target, category, color) {
+    graph.addEdge(source, target, {
+        size: 2,
+        edgeCategory: category,
+        type: "line",
+        color: color,
+    });
+}
+
+/**
+ * Add a coordination edge between nodes (Tapio to agents)
+ * @param {Graph} graph - The graph instance
+ * @param {string} source - Source node id
+ * @param {string} target - Target node id
+ */
+function addCoordinationEdge(graph, source, target) {
+    addEdge(graph, source, target, EDGE_TYPES.COORDINATION, COLORS.AGENT);
+}
+
+/**
+ * Add a knowledge edge between nodes (agents to organizations)
+ * @param {Graph} graph - The graph instance
+ * @param {string} source - Source node id
+ * @param {string} target - Target node id
+ */
+function addKnowledgeEdge(graph, source, target) {
+    addEdge(graph, source, target, EDGE_TYPES.KNOWLEDGE, COLORS.KNOWLEDGE_EDGE);
+}
+
+/**
+ * Add a service edge between nodes (needs to agents)
+ * @param {Graph} graph - The graph instance
+ * @param {string} source - Source node id
+ * @param {string} target - Target node id
+ */
+function addServiceEdge(graph, source, target) {
+    addEdge(graph, source, target, EDGE_TYPES.SERVICE, COLORS.NEED);
+}
+
+/**
  * Initialize the Tapio network graph visualization
  * This function creates a network visualization showing the relationships between
  * Tapio agents, Finnish organizations, and immigrant needs.
@@ -16,15 +100,14 @@ export function initializeGraph() {
     const graph = new Graph();
 
     // Add Tapio as the central node
-    graph.addNode("tapio", {
+    addNode(graph, "tapio", {
         label: "Tapio",
-        category: "agent", // Use category for our own categorization
+        category: "agent",
         subtype: "orchestrator",
-        size: 15,
-        color: "#3B82F6",
+        size: NODE_SIZES.ORCHESTRATOR,
+        color: COLORS.AGENT,
         x: 0,
         y: 0,
-        type: "circle", // For sigma rendering - use circle type
     });
 
     // Add agent nodes
@@ -33,45 +116,38 @@ export function initializeGraph() {
             id: "ilmarinen",
             label: "Ilmarinen",
             area: "Immigration Documents",
-            color: "#3B82F6",
         },
-        { id: "sampo", label: "Sampo", area: "Employment", color: "#3B82F6" },
+        { id: "sampo", label: "Sampo", area: "Employment" },
         {
             id: "pellervo",
             label: "Pellervo",
             area: "Entrepreneurship",
-            color: "#3B82F6",
         },
         {
             id: "rauni",
             label: "Rauni",
             area: "Social Benefits",
-            color: "#3B82F6",
         },
-        { id: "otso", label: "Otso", area: "Housing", color: "#3B82F6" },
+        { id: "otso", label: "Otso", area: "Housing" },
         {
             id: "agricola",
             label: "Agricola",
             area: "Education & Language",
-            color: "#3B82F6",
         },
         {
             id: "louhi",
             label: "Louhi",
             area: "Cultural Integration",
-            color: "#3B82F6",
         },
         {
             id: "mielikki",
             label: "Mielikki",
             area: "Healthcare",
-            color: "#3B82F6",
         },
         {
             id: "lempi",
             label: "Lempi",
             area: "Mental Wellbeing",
-            color: "#3B82F6",
         },
     ];
 
@@ -81,255 +157,113 @@ export function initializeGraph() {
             id: "migri",
             label: "Migri",
             area: "Immigration Service",
-            color: "#10B981",
         },
         {
             id: "te",
             label: "TE Services",
             area: "Employment",
-            color: "#10B981",
         },
         {
             id: "kela",
             label: "Kela",
             area: "Social Security",
-            color: "#10B981",
         },
-        { id: "dvv", label: "DVV", area: "Digital Services", color: "#10B981" },
-        { id: "vero", label: "Vero", area: "Taxation", color: "#10B981" },
+        { id: "dvv", label: "DVV", area: "Digital Services" },
+        { id: "vero", label: "Vero", area: "Taxation" },
         {
             id: "municipalities",
             label: "Municipalities",
             area: "Local Services",
-            color: "#10B981",
         },
-        { id: "thl", label: "THL", area: "Health & Welfare", color: "#10B981" },
-        { id: "opetus", label: "OPH", area: "Education", color: "#10B981" },
+        { id: "thl", label: "THL", area: "Health & Welfare" },
+        { id: "opetus", label: "OPH", area: "Education" },
     ];
 
     // Add need nodes
     const needs = [
-        { id: "docs", label: "Residence Permits", color: "#F59E0B" },
-        { id: "work", label: "Finding Work", color: "#F59E0B" },
-        { id: "business", label: "Starting Business", color: "#F59E0B" },
-        { id: "benefits", label: "Social Benefits", color: "#F59E0B" },
-        { id: "housing", label: "Finding Housing", color: "#F59E0B" },
-        { id: "language", label: "Language Learning", color: "#F59E0B" },
-        { id: "culture", label: "Cultural Understanding", color: "#F59E0B" },
-        { id: "health", label: "Healthcare Access", color: "#F59E0B" },
-        { id: "mental", label: "Mental Health", color: "#F59E0B" },
+        { id: "docs", label: "Residence Permits" },
+        { id: "work", label: "Finding Work" },
+        { id: "business", label: "Starting Business" },
+        { id: "benefits", label: "Social Benefits" },
+        { id: "housing", label: "Finding Housing" },
+        { id: "language", label: "Language Learning" },
+        { id: "culture", label: "Cultural Understanding" },
+        { id: "health", label: "Healthcare Access" },
+        { id: "mental", label: "Mental Health" },
     ];
 
-    // Add all nodes to the graph
+    // Add all nodes to the graph with consistent styling
     agents.forEach((agent) => {
-        graph.addNode(agent.id, {
+        addNode(graph, agent.id, {
             label: agent.label,
-            // Use custom attribute for our own categorization
             category: "agent",
             subtype: "specialist",
             area: agent.area,
-            size: 10,
-            color: agent.color,
-            // For sigma rendering - all nodes use the circle type
-            type: "circle",
+            size: NODE_SIZES.AGENT,
+            color: COLORS.AGENT,
         });
     });
 
     organizations.forEach((org) => {
-        graph.addNode(org.id, {
+        addNode(graph, org.id, {
             label: org.label,
-            // Use custom attribute for our own categorization
             category: "organization",
             area: org.area,
-            size: 8,
-            color: org.color,
-            // For sigma rendering - all nodes use the circle type
-            type: "circle",
+            size: NODE_SIZES.ORGANIZATION,
+            color: COLORS.ORGANIZATION,
         });
     });
 
     needs.forEach((need) => {
-        graph.addNode(need.id, {
+        addNode(graph, need.id, {
             label: need.label,
-            // Use custom attribute for our own categorization
             category: "need",
-            size: 7,
-            color: need.color,
-            // For sigma rendering - all nodes use the circle type
-            type: "circle",
+            size: NODE_SIZES.NEED,
+            color: COLORS.NEED,
         });
     });
 
     // Connect Tapio to all agents
     agents.forEach((agent) => {
-        graph.addEdge("tapio", agent.id, {
-            size: 2,
-            edgeCategory: "coordination", // Custom categorization
-            type: "line", // Sigma's built-in edge type
-            color: "#3B82F6",
+        addCoordinationEdge(graph, "tapio", agent.id);
+    });
+
+    // Define agent to organization connections
+    const agentOrgConnections = [
+        { agent: "ilmarinen", orgs: [ "migri", "dvv" ] },
+        { agent: "sampo", orgs: [ "te", "vero" ] },
+        { agent: "pellervo", orgs: [ "te", "vero" ] },
+        { agent: "rauni", orgs: [ "kela", "municipalities" ] },
+        { agent: "otso", orgs: [ "municipalities", "kela" ] },
+        { agent: "agricola", orgs: [ "opetus", "te" ] },
+        { agent: "louhi", orgs: [ "municipalities" ] },
+        { agent: "mielikki", orgs: [ "thl", "kela" ] },
+        { agent: "lempi", orgs: [ "thl" ] },
+    ];
+
+    // Connect agents to relevant organizations
+    agentOrgConnections.forEach(({ agent, orgs }) => {
+        orgs.forEach(org => {
+            addKnowledgeEdge(graph, agent, org);
         });
     });
 
-    // Connect agents to relevant organizations
-    graph.addEdge("ilmarinen", "migri", {
-        size: 2,
-        edgeCategory: "knowledge", // Custom categorization
-        type: "line", // Sigma's built-in edge type
-        color: "#6B7280",
-    });
-    graph.addEdge("ilmarinen", "dvv", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-
-    graph.addEdge("sampo", "te", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-    graph.addEdge("sampo", "vero", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-
-    graph.addEdge("pellervo", "te", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-    graph.addEdge("pellervo", "vero", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-
-    graph.addEdge("rauni", "kela", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-    graph.addEdge("rauni", "municipalities", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-
-    graph.addEdge("otso", "municipalities", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-    graph.addEdge("otso", "kela", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-
-    graph.addEdge("agricola", "opetus", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-    graph.addEdge("agricola", "te", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-
-    graph.addEdge("louhi", "municipalities", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-
-    graph.addEdge("mielikki", "thl", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-    graph.addEdge("mielikki", "kela", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
-
-    graph.addEdge("lempi", "thl", {
-        size: 2,
-        edgeCategory: "knowledge",
-        type: "line",
-        color: "#6B7280",
-    });
+    // Define need to agent connections
+    const needAgentConnections = [
+        { need: "docs", agent: "ilmarinen" },
+        { need: "work", agent: "sampo" },
+        { need: "business", agent: "pellervo" },
+        { need: "benefits", agent: "rauni" },
+        { need: "housing", agent: "otso" },
+        { need: "language", agent: "agricola" },
+        { need: "culture", agent: "louhi" },
+        { need: "health", agent: "mielikki" },
+        { need: "mental", agent: "lempi" },
+    ];
 
     // Connect needs to relevant agents
-    graph.addEdge("docs", "ilmarinen", {
-        size: 2,
-        edgeCategory: "service",
-        type: "line",
-        color: "#F59E0B",
-    });
-    graph.addEdge("work", "sampo", {
-        size: 2,
-        edgeCategory: "service",
-        type: "line",
-        color: "#F59E0B",
-    });
-    graph.addEdge("business", "pellervo", {
-        size: 2,
-        edgeCategory: "service",
-        type: "line",
-        color: "#F59E0B",
-    });
-    graph.addEdge("benefits", "rauni", {
-        size: 2,
-        edgeCategory: "service",
-        type: "line",
-        color: "#F59E0B",
-    });
-    graph.addEdge("housing", "otso", {
-        size: 2,
-        edgeCategory: "service",
-        type: "line",
-        color: "#F59E0B",
-    });
-    graph.addEdge("language", "agricola", {
-        size: 2,
-        edgeCategory: "service",
-        type: "line",
-        color: "#F59E0B",
-    });
-    graph.addEdge("culture", "louhi", {
-        size: 2,
-        edgeCategory: "service",
-        type: "line",
-        color: "#F59E0B",
-    });
-    graph.addEdge("health", "mielikki", {
-        size: 2,
-        edgeCategory: "service",
-        type: "line",
-        color: "#F59E0B",
-    });
-    graph.addEdge("mental", "lempi", {
-        size: 2,
-        edgeCategory: "service",
-        type: "line",
-        color: "#F59E0B",
+    needAgentConnections.forEach(({ need, agent }) => {
+        addServiceEdge(graph, need, agent);
     });
 
     // Apply circular layout
@@ -367,7 +301,7 @@ export function initializeGraph() {
 
             // Handle highlighting for better interactivity
             if (data.highlighted) {
-                res.color = "#FF5733"; // Highlight color
+                res.color = COLORS.HIGHLIGHT; // Highlight color
                 res.zIndex = 1; // Bring highlighted nodes to front
                 res.size = data.size * 1.2; // Make highlighted nodes slightly larger
             } else if (hoveredNode && !data.highlighted) {
@@ -382,17 +316,17 @@ export function initializeGraph() {
             const res = { ...data };
 
             // Make certain edge types more visible and differentiated
-            if (data.edgeCategory === "coordination") {
+            if (data.edgeCategory === EDGE_TYPES.COORDINATION) {
                 res.size = data.size * 1.5; // Thicker lines
-            } else if (data.edgeCategory === "knowledge") {
+            } else if (data.edgeCategory === EDGE_TYPES.KNOWLEDGE) {
                 // Leave as is
-            } else if (data.edgeCategory === "service") {
+            } else if (data.edgeCategory === EDGE_TYPES.SERVICE) {
                 res.size = data.size * 1.2; // Slightly thicker than knowledge
             }
 
             // Handle highlighting for better interactivity
             if (data.highlighted) {
-                res.color = "#FF5733"; // Highlight color
+                res.color = COLORS.HIGHLIGHT; // Highlight color
                 res.zIndex = 1; // Bring highlighted edges to front
                 res.size = data.size * 1.5; // Make highlighted edges thicker
             } else if (hoveredNode && !data.highlighted) {
