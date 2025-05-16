@@ -364,7 +364,8 @@ function positionNodesInConcentricCircles(graph, layers) {
             graph.setNodeAttribute(nodeId, "x", x);
             graph.setNodeAttribute(nodeId, "y", y);
             // Add a fixed flag to keep needs more anchored during force layout
-            graph.setNodeAttribute(nodeId, "fixed", 0.8); // Partial fixing (0-1)
+            graph.setNodeAttribute(nodeId, "fixed", true); // Fully fixed
+            graph.setNodeAttribute(nodeId, "mass", 8); // Higher mass makes the node move less during layout
         });
     }
 
@@ -379,7 +380,8 @@ function positionNodesInConcentricCircles(graph, layers) {
             graph.setNodeAttribute(nodeId, "x", x);
             graph.setNodeAttribute(nodeId, "y", y);
             // Slightly anchor agents but allow more movement than needs
-            graph.setNodeAttribute(nodeId, "fixed", 0.3);
+            graph.setNodeAttribute(nodeId, "fixed", false); // Not fixed
+            graph.setNodeAttribute(nodeId, "mass", 5); // Medium mass for moderate movement
         });
     }
 
@@ -394,7 +396,8 @@ function positionNodesInConcentricCircles(graph, layers) {
             graph.setNodeAttribute(nodeId, "x", x);
             graph.setNodeAttribute(nodeId, "y", y);
             // Organizations can move more freely
-            graph.setNodeAttribute(nodeId, "fixed", 0.1);
+            graph.setNodeAttribute(nodeId, "fixed", false); // Not fixed
+            graph.setNodeAttribute(nodeId, "mass", 2); // Lower mass allows more movement
         });
     }
 }
@@ -597,8 +600,9 @@ function initializeHoverEffects(graph, renderer) {
     container.addEventListener("keydown", (e) => {
         if (e.key === "Tab") {
             // Focus management for tab navigation
-            container.setAttribute("aria-activedescendant", "immigrants");
-            setHoveredNode("immigrants"); // Default to Immigrants node
+            const defaultId = "docs"; // Use the first need node as default
+            container.setAttribute("aria-activedescendant", defaultId);
+            setHoveredNode(defaultId); // Default to Residence Permits need
         }
     });
 }
