@@ -4,6 +4,9 @@ import Sigma from "sigma";
 import * as layoutAlgorithms from "graphology-layout";
 import forceAtlas2 from "graphology-layout-forceatlas2";
 
+// Global state for tracking the currently hovered node
+let hoveredNode = null;
+
 /**
  * Node and edge styling constants
  */
@@ -438,9 +441,6 @@ function fadeColor(hexColor, opacity) {
     // Return rgba color with specified opacity
     return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 }
-
-// Global state for tracking the currently hovered node
-let hoveredNode = null;
 
 /**
  * Initialize hover effects to improve graph interactivity
