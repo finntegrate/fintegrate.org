@@ -1,0 +1,63 @@
+---
+/**
+ * VantaHero Component
+ *
+ * A reusable hero component with Vanta.js background animation.
+ * Provides a consistent structure for hero sections across all pages.
+ * Respects accessibility by including proper contrast overlay and reduced motion preferences.
+ */
+
+// Props
+interface Props {
+  /** The height of the hero section, controls padding. Default is 'default' */
+  height?: "default" | "compact" | "tall";
+  /** Optional custom class to add to the hero section */
+  class?: string;
+  /** Optional attributes to apply to the hero section */
+  [key: string]: any;
+}
+
+const { height = "default", class: className = "", ...rest } = Astro.props;
+
+// Calculate padding based on height prop
+const paddingClasses = {
+  default: "py-20",
+  compact: "py-12",
+  tall: "py-20 md:py-32",
+};
+
+const padding = paddingClasses[height];
+---
+
+<section
+  id="hero"
+  class:list={[
+    "relative isolate flex justify-center items-center",
+    padding,
+    className,
+  ]}
+  aria-labelledby="hero-heading"
+  {...rest}
+>
+  <!-- Vanta.js container with overlay for accessibility -->
+  <div id="hero-vanta" class="absolute inset-0 z-[-1]" aria-hidden="true"></div>
+
+  <!-- Accessibility overlay to ensure text contrast -->
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-black/50 to-primary/30 z-[-1]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="hero-content text-center relative z-10 container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <!-- Content Slot -->
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Any component-specific styles that aren't already in global.css */
+  /* Global styles are in src/styles/global.css */
+</style>
