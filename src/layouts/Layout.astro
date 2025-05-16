@@ -1,7 +1,6 @@
 ---
 import Navigation from "../components/Navigation.astro";
 import ReducedMotionToggle from "../components/ReducedMotionToggle.astro";
-import background from "../assets/background.svg";
 import "../styles/global.css";
 ---
 
@@ -50,14 +49,6 @@ import "../styles/global.css";
     <div
       class="min-h-screen font-sans text-base-content bg-base-100 overflow-x-hidden"
     >
-      <!-- Background with reduced opacity -->
-      <img
-        class="fixed top-0 left-0 w-full h-full z-[-1] blur-3xl opacity-60"
-        src={background.src}
-        alt=""
-        fetchpriority="high"
-      />
-
       <!-- Navigation -->
       <Navigation />
 
