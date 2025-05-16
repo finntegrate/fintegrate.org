@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import VantaHero from "../components/VantaHero.astro";
 ---
 
 <Layout>
@@ -18,46 +19,27 @@ import { Icon } from "astro-icon/components";
   </head>
 
   <!-- Hero Section with Vanta.js -->
-  <section
-    id="hero"
-    class="relative isolate py-20 flex justify-center items-center"
-    aria-labelledby="hero-heading"
-  >
-    <!-- Vanta.js container with overlay for accessibility -->
-    <div id="hero-vanta" class="absolute inset-0 z-[-1]" aria-hidden="true">
-    </div>
-
-    <!-- Accessibility overlay to ensure text contrast -->
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-black/50 to-primary/30 z-[-1]"
-      aria-hidden="true"
+  <VantaHero height="default">
+    <h1
+      id="hero-heading"
+      class="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-md"
     >
+      Making Finnish Immigration Simpler
+    </h1>
+    <p class="py-6 text-xl md:text-2xl text-white/90 drop-shadow-md">
+      We're building an AI-powered, multilingual guide that helps immigrants
+      find and understand the information they need when moving to Finland.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/about" class="btn btn-primary"> Learn About Our Mission </a>
+      <a
+        href="#contact"
+        class="btn btn-outline btn-secondary bg-white/10 text-white border-white hover:bg-white hover:text-primary"
+      >
+        Partner With Us
+      </a>
     </div>
-
-    <div class="hero-content text-center relative z-10 container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h1
-          id="hero-heading"
-          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-md"
-        >
-          Making Finnish Immigration Simpler
-        </h1>
-        <p class="py-6 text-xl md:text-2xl text-white/90 drop-shadow-md">
-          We're building an AI-powered, multilingual guide that helps immigrants
-          find and understand the information they need when moving to Finland.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="/about" class="btn btn-primary"> Learn About Our Mission </a>
-          <a
-            href="#contact"
-            class="btn btn-outline btn-secondary bg-white/10 text-white border-white hover:bg-white hover:text-primary"
-          >
-            Partner With Us
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  </VantaHero>
 
   <!-- Problem Section -->
   <section id="problem" class="py-16 bg-base-100 bg-opacity-90">
@@ -459,7 +441,7 @@ import { Icon } from "astro-icon/components";
               <h3 class="card-title justify-center">Get Involved</h3>
               <div class="grid sm:grid-cols-2 gap-4">
                 <a
-                  href="https://github.com/finntegrate/migri-assistant"
+                  href="https://github.com/finntegrate/tapio"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn btn-outline btn-primary bg-white"

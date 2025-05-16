@@ -1,52 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import VantaHero from "../components/VantaHero.astro";
 ---
 
 <Layout title="Mission & Vision | Finntegrate">
   <div class="bg-base-200">
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden">
-      <!-- Background gradient shapes - contained within the hero section -->
-      <div
-        class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-70"
-        aria-hidden="true"
+    <!-- Hero Section with Vanta.js -->
+    <VantaHero height="compact">
+      <h1
+        id="hero-heading"
+        class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white drop-shadow-md"
       >
-      </div>
-      <!-- Subtle pattern overlay -->
-      <div
-        class="absolute inset-0 opacity-5"
-        style="background-image: url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
-        aria-hidden="true"
+        Our Mission & Vision
+      </h1>
+      <p
+        class="text-xl md:text-2xl text-white/90 drop-shadow-md mb-10 max-w-2xl mx-auto"
       >
+        Connecting immigrants with the information they need to navigate Finnish
+        administrative processes with confidence.
+      </p>
+      <div class="flex justify-center gap-4 mt-4">
+        <a href="/" class="btn btn-primary flex items-center">
+          <Icon name="mdi:arrow-left" class="h-5 w-5 mr-2" aria-hidden="true" />
+          Back to Home
+        </a>
       </div>
-
-      <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-32">
-        <div class="max-w-3xl mx-auto text-center">
-          <h1
-            class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-transparent"
-          >
-            Our Mission & Vision
-          </h1>
-          <p
-            class="text-xl md:text-2xl text-base-content/70 mb-10 max-w-2xl mx-auto"
-          >
-            Connecting immigrants with the information they need to navigate
-            Finnish administrative processes with confidence.
-          </p>
-          <div class="flex justify-center space-x-4 mt-8">
-            <a href="/" class="btn btn-outline btn-primary flex items-center">
-              <Icon
-                name="mdi:arrow-left"
-                class="h-5 w-5 mr-2"
-                aria-hidden="true"
-              />
-              Back to Home
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+    </VantaHero>
 
     <!-- Mission Section -->
     <section class="bg-base-100 py-16">

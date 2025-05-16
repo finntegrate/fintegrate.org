@@ -1,0 +1,741 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import VantaHero from "../components/VantaHero.astro";
+---
+
+<Layout>
+  <!-- Meta Tags -->
+  <head>
+    <title>Tapio - Finntegrate's Finnish Mythology-Inspired AI Guide</title>
+    <meta
+      name="description"
+      content="Meet Tapio, Finntegrate's AI guide inspired by Finnish mythology, helping immigrants navigate Finnish systems through a team of specialized agents."
+    />
+    <meta
+      name="keywords"
+      content="Tapio AI, Finnish mythology AI, immigration assistance, Finland bureaucracy help, AI guide Finland"
+    />
+  </head>
+
+  <!-- Hero Section with Vanta.js -->
+  <VantaHero height="default">
+    <h1
+      id="hero-heading"
+      class="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-md"
+    >
+      Meet Tapio
+    </h1>
+    <p class="py-6 text-xl md:text-2xl text-white/90 drop-shadow-md">
+      Your Finnish mythology-inspired guide to navigating life in Finland
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#agents" class="btn btn-primary"> Meet the Specialist Agents </a>
+      <a
+        href="#how-it-works"
+        class="btn btn-outline btn-secondary bg-white/10 text-white border-white hover:bg-white hover:text-primary"
+      >
+        How It Works
+      </a>
+    </div>
+  </VantaHero>
+
+  <!-- Introduction Section -->
+  <section id="introduction" class="py-16 bg-base-100 bg-opacity-90">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">A Cultural Approach to Assistance</h2>
+        <p class="text-xl text-base-content/70 max-w-3xl mx-auto mt-4">
+          Tapio combines Finnish cultural heritage with modern AI to create a
+          meaningful support system for immigrants.
+        </p>
+      </div>
+
+      <div class="card bg-base-100 shadow-sm max-w-3xl mx-auto">
+        <div class="card-body">
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="w-full md:w-1/3 flex justify-center">
+              <div
+                class="w-32 h-32 rounded-full bg-primary/20 flex items-center justify-center"
+              >
+                <Icon
+                  name="mdi:pine-tree"
+                  class="h-16 w-16 text-primary"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+            <div class="w-full md:w-2/3">
+              <h3 class="text-2xl font-semibold mb-3">
+                Tapio: The Forest Guide
+              </h3>
+              <p class="mb-4">
+                In Finnish mythology, Tapio is the wise and benevolent god of
+                the forest who provides guidance to those who seek wisdom. Just
+                as forests hold profound cultural significance in Finland, Tapio
+                helps immigrants find their path through unfamiliar territory.
+              </p>
+              <p>
+                As your main guide, Tapio welcomes you, understands your needs,
+                and connects you with specialized helpers for different aspects
+                of life in Finland.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multi-Agent Concept -->
+  <section id="concept" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">The Tapio Agency</h2>
+        <p class="text-xl text-base-content/70 max-w-3xl mx-auto mt-4">
+          A team of specialized guides, each with deep knowledge in their
+          domain, working together to support your transition to Finland.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body">
+            <div
+              class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-2"
+            >
+              <Icon
+                name="mdi:handshake"
+                class="h-8 w-8 text-primary"
+                aria-hidden="true"
+              />
+            </div>
+            <h3 class="card-title">Culturally Meaningful</h3>
+            <p>
+              Each agent is named after a significant figure from Finnish
+              mythology or cultural history, creating connections to Finland's
+              rich heritage.
+            </p>
+          </div>
+        </div>
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body">
+            <div
+              class="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-2"
+            >
+              <Icon
+                name="mdi:account-group"
+                class="h-8 w-8 text-secondary"
+                aria-hidden="true"
+              />
+            </div>
+            <h3 class="card-title">Specialized Expertise</h3>
+            <p>
+              Rather than one assistant who knows a little about everything, you
+              get access to specialists with deep knowledge in their specific
+              areas.
+            </p>
+          </div>
+        </div>
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body">
+            <div
+              class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mb-2"
+            >
+              <Icon
+                name="mdi:translate"
+                class="h-8 w-8 text-accent"
+                aria-hidden="true"
+              />
+            </div>
+            <h3 class="card-title">Multilingual Support</h3>
+            <p>
+              All agents communicate in your preferred language, making Finnish
+              systems accessible regardless of your language background.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agents Section -->
+  <section id="agents" class="py-16 bg-base-100 bg-opacity-90">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Meet Your Specialized Guides</h2>
+        <p class="text-xl text-base-content/70 max-w-3xl mx-auto mt-4">
+          Each agent specializes in a different aspect of life in Finland, with
+          expertise drawn from their mythological counterparts.
+        </p>
+      </div>
+
+      <!-- Immigration & Legal -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-bold text-primary mb-6 text-center">
+          Immigration & Legal Processes
+        </h3>
+        <div class="grid md:grid-cols-1 gap-6 max-w-3xl mx-auto">
+          <div class="card bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex flex-col md:flex-row gap-4 items-center">
+                <div class="w-full md:w-1/4 flex justify-center">
+                  <div
+                    class="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center"
+                  >
+                    <Icon
+                      name="mdi:hammer"
+                      class="h-10 w-10 text-primary"
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+                <div class="w-full md:w-3/4">
+                  <h4 class="text-xl font-semibold mb-1">
+                    Ilmarinen: The Craftsman of Documentation
+                  </h4>
+                  <p class="text-sm text-base-content/70 mb-2">
+                    Named after the eternal craftsman who forged the Sampo in
+                    the Kalevala
+                  </p>
+                  <p>
+                    Guides you through residence permits, visa processes, and
+                    official paperwork with the same precision his mythological
+                    counterpart used in forging magical artifacts.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Economic Integration -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-bold text-secondary mb-6 text-center">
+          Economic Integration
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div class="card bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center mb-3"
+                >
+                  <Icon
+                    name="mdi:cash-multiple"
+                    class="h-8 w-8 text-secondary"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold mb-1 text-center">
+                  Sampo: The Prosperity Guide
+                </h4>
+                <p class="text-xs text-base-content/70 mb-2 text-center">
+                  Named after the magical artifact that brought abundance
+                </p>
+                <p class="text-center">
+                  Helps with job searching, professional networking, and
+                  workplace culture, creating opportunities just as the
+                  mythological Sampo produced resources.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center mb-3"
+                >
+                  <Icon
+                    name="mdi:sprout"
+                    class="h-8 w-8 text-secondary"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold mb-1 text-center">
+                  Pellervo: The Harvest Guide
+                </h4>
+                <p class="text-xs text-base-content/70 mb-2 text-center">
+                  Named after the god of crops and farming
+                </p>
+                <p class="text-center">
+                  Specializes in entrepreneurship, business establishment, and
+                  Finnish business regulations—helping you plant seeds for
+                  future prosperity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Services -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-bold text-accent mb-6 text-center">
+          Social Services & Benefits
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div class="card bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-3"
+                >
+                  <Icon
+                    name="mdi:tree"
+                    class="h-8 w-8 text-accent"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold mb-1 text-center">
+                  Rauni: The Prosperity Guardian
+                </h4>
+                <p class="text-xs text-base-content/70 mb-2 text-center">
+                  Named after the goddess of fertility and prosperity
+                </p>
+                <p class="text-center">
+                  Manages information about Kela benefits, social security, and
+                  family support, helping you access nurturing support systems
+                  in Finland.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-3"
+                >
+                  <Icon
+                    name="mdi:home"
+                    class="h-8 w-8 text-accent"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold mb-1 text-center">
+                  Otso: The Housing Guardian
+                </h4>
+                <p class="text-xs text-base-content/70 mb-2 text-center">
+                  Named after the respectful term for bear in Finnish
+                </p>
+                <p class="text-center">
+                  Specializes in housing matters, rental agreements, tenant
+                  rights, and housing benefits to help you establish and
+                  safeguard your home.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education & Language -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-bold text-info mb-6 text-center">
+          Education & Language
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div class="card bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-info/20 flex items-center justify-center mb-3"
+                >
+                  <Icon
+                    name="mdi:book-open-variant"
+                    class="h-8 w-8 text-info"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold mb-1 text-center">
+                  Agricola: The Language Mentor
+                </h4>
+                <p class="text-xs text-base-content/70 mb-2 text-center">
+                  Named after Mikael Agricola, founder of written Finnish
+                </p>
+                <p class="text-center">
+                  Focuses on language learning resources, educational
+                  opportunities, and qualification recognition to help you
+                  access learning in Finland.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-info/20 flex items-center justify-center mb-3"
+                >
+                  <Icon
+                    name="material-symbols:partner-exchange"
+                    class="h-8 w-8 text-info"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold mb-1 text-center">
+                  Louhi: The Cultural Guide
+                </h4>
+                <p class="text-xs text-base-content/70 mb-2 text-center">
+                  Named after the powerful matriarch in the Kalevala
+                </p>
+                <p class="text-center">
+                  Provides cultural orientation, helping you understand Finnish
+                  customs, holidays, social norms, and everyday etiquette.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Health & Wellbeing -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-bold text-success mb-6 text-center">
+          Health & Wellbeing
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div class="card bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-success/20 flex items-center justify-center mb-3"
+                >
+                  <Icon
+                    name="mdi:medical-bag"
+                    class="h-8 w-8 text-success"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold mb-1 text-center">
+                  Mielikki: The Healer
+                </h4>
+                <p class="text-xs text-base-content/70 mb-2 text-center">
+                  Named after the goddess associated with healing
+                </p>
+                <p class="text-center">
+                  Specializes in navigating healthcare systems, finding medical
+                  services, and understanding health insurance in Finland.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-success/20 flex items-center justify-center mb-3"
+                >
+                  <Icon
+                    name="mdi:heart"
+                    class="h-8 w-8 text-success"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold mb-1 text-center">
+                  Lempi: The Wellbeing Supporter
+                </h4>
+                <p class="text-xs text-base-content/70 mb-2 text-center">
+                  Named after the Finnish concept for love and affection
+                </p>
+                <p class="text-center">
+                  Focuses on mental health resources, wellbeing services, and
+                  community connections to support your emotional health.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practical Living -->
+      <div>
+        <h3 class="text-2xl font-bold text-warning mb-6 text-center">
+          Practical Living
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div class="card bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-warning/20 flex items-center justify-center mb-3"
+                >
+                  <Icon
+                    name="mdi:waves"
+                    class="h-8 w-8 text-warning"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold mb-1 text-center">
+                  Ahti: The Navigator
+                </h4>
+                <p class="text-xs text-base-content/70 mb-2 text-center">
+                  Named after the god of waters and seas
+                </p>
+                <p class="text-center">
+                  Helps with transportation, utilities, banking, and everyday
+                  logistics to make daily life in Finland easier.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-warning/20 flex items-center justify-center mb-3"
+                >
+                  <Icon
+                    name="mdi:map"
+                    class="h-8 w-8 text-warning"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h4 class="text-lg font-semibold mb-1 text-center">
+                  Kokko: The Regional Expert
+                </h4>
+                <p class="text-xs text-base-content/70 mb-2 text-center">
+                  Named after the mighty eagle in Finnish mythology
+                </p>
+                <p class="text-center">
+                  Provides regional information, local resources, and
+                  community-specific guidance for your area in Finland.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">How Tapio Works</h2>
+        <p class="text-xl text-base-content/70 max-w-3xl mx-auto mt-4">
+          A coordinated system designed to provide the right expertise at the
+          right time.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body items-center text-center">
+            <div
+              class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-2"
+            >
+              <span class="text-xl font-bold text-primary">1</span>
+            </div>
+            <h3 class="card-title">Welcome & Assessment</h3>
+            <p>
+              Tapio welcomes you and assesses your specific needs through
+              natural conversation.
+            </p>
+          </div>
+        </div>
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body items-center text-center">
+            <div
+              class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-2"
+            >
+              <span class="text-xl font-bold text-primary">2</span>
+            </div>
+            <h3 class="card-title">Expert Assignment</h3>
+            <p>
+              Based on your query, Tapio activates the specialized agent with
+              the most relevant expertise.
+            </p>
+          </div>
+        </div>
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body items-center text-center">
+            <div
+              class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-2"
+            >
+              <span class="text-xl font-bold text-primary">3</span>
+            </div>
+            <h3 class="card-title">Specialized Assistance</h3>
+            <p>
+              The specialist provides detailed guidance and information in their
+              area of expertise.
+            </p>
+          </div>
+        </div>
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body items-center text-center">
+            <div
+              class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-2"
+            >
+              <span class="text-xl font-bold text-primary">4</span>
+            </div>
+            <h3 class="card-title">Seamless Transitions</h3>
+            <p>
+              If needed, you'll be guided to another specialist while
+              maintaining conversation context.
+            </p>
+          </div>
+        </div>
+        <div class="card bg-base-100 hover:shadow-md transition-all">
+          <div class="card-body items-center text-center">
+            <div
+              class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-2"
+            >
+              <span class="text-xl font-bold text-primary">5</span>
+            </div>
+            <h3 class="card-title">Continued Support</h3>
+            <p>
+              Tapio remembers your situation and provides consistent support
+              across multiple conversations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Implementation -->
+  <section id="technical" class="py-16 bg-base-100 bg-opacity-90">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Behind the Scenes</h2>
+        <p class="text-xl text-base-content/70 max-w-3xl mx-auto mt-4">
+          Powered by advanced AI technology to deliver accurate, personalized
+          assistance.
+        </p>
+      </div>
+
+      <div class="card bg-base-100 shadow-sm max-w-3xl mx-auto">
+        <div class="card-body">
+          <h3 class="card-title justify-center mb-6">
+            Technical Implementation
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <Icon
+                name="mdi:database-search"
+                class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-1"
+                aria-hidden="true"
+              />
+              <div>
+                <span class="font-semibold">Unified Knowledge Base:</span>
+                <p class="text-base-content/80">
+                  A comprehensive database with specialized knowledge domains
+                  for each agent
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <Icon
+                name="mdi:account-switch"
+                class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-1"
+                aria-hidden="true"
+              />
+              <div>
+                <span class="font-semibold">Agent Orchestration:</span>
+                <p class="text-base-content/80">
+                  Intelligent routing to connect you with the most appropriate
+                  specialist for your needs
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <Icon
+                name="mdi:brain"
+                class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-1"
+                aria-hidden="true"
+              />
+              <div>
+                <span class="font-semibold">Contextual Memory:</span>
+                <p class="text-base-content/80">
+                  A shared system that maintains your conversation context
+                  across different specialist interactions
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <Icon
+                name="mdi:translate"
+                class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-1"
+                aria-hidden="true"
+              />
+              <div>
+                <span class="font-semibold">Multilingual Support:</span>
+                <p class="text-base-content/80">
+                  All agents communicate in your preferred language, making
+                  information accessible
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <Icon
+                name="mdi:link"
+                class="h-6 w-6 text-primary mr-2 flex-shrink-0 mt-1"
+                aria-hidden="true"
+              />
+              <div>
+                <span class="font-semibold">Official Source Integration:</span>
+                <p class="text-base-content/80">
+                  Direct connections to information from Migri, Kela, TE
+                  Services, and other official sources
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section
+    id="cta"
+    class="py-16 bg-gradient-to-br from-primary to-secondary text-white"
+  >
+    <div class="hero">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h2 class="text-3xl font-bold">Experience Tapio</h2>
+          <p class="py-6 text-xl">
+            Discover how our Finnish mythology-inspired guides can help make
+            your transition to Finland smoother and more meaningful.
+          </p>
+
+          <div class="card bg-base-100 bg-opacity-10 backdrop-blur-sm">
+            <div class="card-body">
+              <h3 class="card-title justify-center">Get Involved</h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <a
+                  href="https://github.com/finntegrate/tapio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-outline btn-primary bg-white"
+                >
+                  <Icon name="mdi:github" class="h-5 w-5" aria-hidden="true" />
+                  GitHub Repository
+                </a>
+                <a
+                  href="mailto:contact@finntegrate.org"
+                  class="btn btn-outline btn-secondary bg-white"
+                >
+                  <Icon
+                    name="mdi:email-outline"
+                    class="h-5 w-5"
+                    aria-hidden="true"
+                  />
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- No custom script needed since Vanta.js is initialized in the Layout -->
+</Layout>
