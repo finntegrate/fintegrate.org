@@ -13,6 +13,8 @@ const COLORS = {
     NEED: "#F59E0B", // Yellow/Orange
     KNOWLEDGE_EDGE: "#6B7280", // Gray
     HIGHLIGHT: "#FF5733", // Bright orange for highlighting
+    IMMIGRANTS: "#8D6E63", // Brown color for immigrants node
+    IMMIGRANTS_NEEDS_EDGE: "#A1887F", // Light brown for immigrant-needs connections
 };
 
 const NODE_SIZES = {
@@ -20,12 +22,13 @@ const NODE_SIZES = {
     AGENT: 10,
     ORGANIZATION: 8,
     NEED: 7,
+    IMMIGRANTS: 18,
 };
 
 const EDGE_TYPES = {
-    COORDINATION: "coordination",
-    KNOWLEDGE: "knowledge",
-    SERVICE: "service",
+    IMMIGRANTS_NEEDS: "immigrants_needs",
+    NEED_AGENT: "need_agent",
+    AGENT_ORGANIZATION: "agent_organization",
 };
 
 /**
@@ -59,33 +62,33 @@ function addEdge(graph, source, target, category, color) {
 }
 
 /**
- * Add a coordination edge between nodes (Tapio to agents)
+ * Add an edge between immigrants and their needs
  * @param {Graph} graph - The graph instance
- * @param {string} source - Source node id
- * @param {string} target - Target node id
+ * @param {string} source - Source node id (immigrants)
+ * @param {string} target - Target node id (need)
  */
-function addCoordinationEdge(graph, source, target) {
-    addEdge(graph, source, target, EDGE_TYPES.COORDINATION, COLORS.AGENT);
+function addImmigrantsNeedsEdge(graph, source, target) {
+    addEdge(graph, source, target, EDGE_TYPES.IMMIGRANTS_NEEDS, COLORS.IMMIGRANTS_NEEDS_EDGE);
 }
 
 /**
- * Add a knowledge edge between nodes (agents to organizations)
+ * Add an edge between needs and agents that help with them
  * @param {Graph} graph - The graph instance
- * @param {string} source - Source node id
- * @param {string} target - Target node id
+ * @param {string} source - Source node id (need)
+ * @param {string} target - Target node id (agent)
  */
-function addKnowledgeEdge(graph, source, target) {
-    addEdge(graph, source, target, EDGE_TYPES.KNOWLEDGE, COLORS.KNOWLEDGE_EDGE);
+function addNeedAgentEdge(graph, source, target) {
+    addEdge(graph, source, target, EDGE_TYPES.NEED_AGENT, COLORS.NEED);
 }
 
 /**
- * Add a service edge between nodes (needs to agents)
+ * Add an edge between agents and organizations they interface with
  * @param {Graph} graph - The graph instance
- * @param {string} source - Source node id
- * @param {string} target - Target node id
+ * @param {string} source - Source node id (agent)
+ * @param {string} target - Target node id (organization)
  */
-function addServiceEdge(graph, source, target) {
-    addEdge(graph, source, target, EDGE_TYPES.SERVICE, COLORS.NEED);
+function addAgentOrganizationEdge(graph, source, target) {
+    addEdge(graph, source, target, EDGE_TYPES.AGENT_ORGANIZATION, COLORS.KNOWLEDGE_EDGE);
 }
 
 /**
@@ -99,13 +102,12 @@ export function initializeGraph() {
     // Create a new graph instance
     const graph = new Graph();
 
-    // Add Tapio as the central node
-    addNode(graph, "tapio", {
-        label: "Tapio",
-        category: "agent",
-        subtype: "orchestrator",
+    // Add "Immigrants" as the central node
+    addNode(graph, "immigrants", {
+        label: "Immigrants",
+        category: "center",
         size: NODE_SIZES.ORCHESTRATOR,
-        color: COLORS.AGENT,
+        color: "#8D6E63", // Brown color
         x: 0,
         y: 0,
     });
@@ -223,9 +225,27 @@ export function initializeGraph() {
         });
     });
 
-    // Connect Tapio to all agents
-    agents.forEach((agent) => {
-        addCoordinationEdge(graph, "tapio", agent.id);
+    // Connect immigrants to all needs
+    needs.forEach((need) => {
+        addImmigrantsNeedsEdge(graph, "immigrants", need.id);
+    });
+
+    // Define need to agent connections
+    const needAgentConnections = [
+        { need: "docs", agent: "ilmarinen" },
+        { need: "work", agent: "sampo" },
+        { need: "business", agent: "pellervo" },
+        { need: "benefits", agent: "rauni" },
+        { need: "housing", agent: "otso" },
+        { need: "language", agent: "agricola" },
+        { need: "culture", agent: "louhi" },
+        { need: "health", agent: "mielikki" },
+        { need: "mental", agent: "lempi" },
+    ];
+
+    // Connect needs to relevant agents
+    needAgentConnections.forEach(({ need, agent }) => {
+        addNeedAgentEdge(graph, need, agent);
     });
 
     // Define agent to organization connections
@@ -244,30 +264,20 @@ export function initializeGraph() {
     // Connect agents to relevant organizations
     agentOrgConnections.forEach(({ agent, orgs }) => {
         orgs.forEach(org => {
-            addKnowledgeEdge(graph, agent, org);
+            addAgentOrganizationEdge(graph, agent, org);
         });
     });
 
-    // Define need to agent connections
-    const needAgentConnections = [
-        { need: "docs", agent: "ilmarinen" },
-        { need: "work", agent: "sampo" },
-        { need: "business", agent: "pellervo" },
-        { need: "benefits", agent: "rauni" },
-        { need: "housing", agent: "otso" },
-        { need: "language", agent: "agricola" },
-        { need: "culture", agent: "louhi" },
-        { need: "health", agent: "mielikki" },
-        { need: "mental", agent: "lempi" },
-    ];
+    // Position nodes in concentric circles
+    const layers = {
+        center: [ "immigrants" ],
+        needs: needs.map(n => n.id),
+        agents: agents.map(a => a.id),
+        organizations: organizations.map(o => o.id)
+    };
 
-    // Connect needs to relevant agents
-    needAgentConnections.forEach(({ need, agent }) => {
-        addServiceEdge(graph, need, agent);
-    });
-
-    // Apply circular layout
-    layoutAlgorithms.circular.assign(graph, { scale: 100 });
+    // Calculate positions for each layer
+    positionNodesInConcentricCircles(graph, layers);
 
     // Create sigma instance
     const container = document.getElementById("sigma-container");
@@ -291,8 +301,8 @@ export function initializeGraph() {
         nodeReducer: (node, data) => {
             const res = { ...data };
 
-            if (data.category === "agent" && data.subtype === "orchestrator") {
-                res.label = `${data.label}\n(Orchestrator)`;
+            if (data.category === "center") {
+                res.label = `${data.label}\n(Finnish)`;
             } else if (data.category === "agent") {
                 res.label = `${data.label}\n(${data.area})`;
             } else if (data.category === "organization") {
@@ -316,11 +326,11 @@ export function initializeGraph() {
             const res = { ...data };
 
             // Make certain edge types more visible and differentiated
-            if (data.edgeCategory === EDGE_TYPES.COORDINATION) {
+            if (data.edgeCategory === EDGE_TYPES.IMMIGRANTS_NEEDS) {
                 res.size = data.size * 1.5; // Thicker lines
-            } else if (data.edgeCategory === EDGE_TYPES.KNOWLEDGE) {
+            } else if (data.edgeCategory === EDGE_TYPES.AGENT_ORGANIZATION) {
                 // Leave as is
-            } else if (data.edgeCategory === EDGE_TYPES.SERVICE) {
+            } else if (data.edgeCategory === EDGE_TYPES.NEED_AGENT) {
                 res.size = data.size * 1.2; // Slightly thicker than knowledge
             }
 
@@ -343,6 +353,36 @@ export function initializeGraph() {
 
     // Initialize hover effects for better interactivity
     initializeHoverEffects(graph, renderer);
+}
+
+/**
+ * Position nodes in concentric circles based on their layer
+ * @param {Graph} graph - The graph instance
+ * @param {Object} layers - Object with keys as layer names and values as arrays of node ids
+ */
+function positionNodesInConcentricCircles(graph, layers) {
+    const centerX = 0;
+    const centerY = 0;
+    const radiusStep = 60;  // Distance between consecutive layers
+
+    // Process each layer
+    Object.entries(layers).forEach(([ layerName, nodeIds ], layerIndex) => {
+        // Skip the center node since it's already positioned at (0,0)
+        if (layerName === "center") return;
+
+        const radius = radiusStep * layerIndex;
+        const nodeCount = nodeIds.length;
+
+        // Position nodes evenly in a circle
+        nodeIds.forEach((nodeId, i) => {
+            const angle = (2 * Math.PI * i) / nodeCount;
+            const x = centerX + radius * Math.cos(angle);
+            const y = centerY + radius * Math.sin(angle);
+
+            graph.setNodeAttribute(nodeId, "x", x);
+            graph.setNodeAttribute(nodeId, "y", y);
+        });
+    });
 }
 
 /**
@@ -432,11 +472,15 @@ function initializeHoverEffects(graph, renderer) {
             let infoHtml = `<h4 class="font-semibold text-lg mb-1">${nodeAttributes.label}</h4>`;
 
             // Add different content based on node category
-            if (nodeAttributes.category === "agent") {
-                const area = nodeAttributes.area || "Specialized agent";
-                const subtype = nodeAttributes.subtype === "orchestrator" ? "Orchestrator" : "Specialist";
+            if (nodeAttributes.category === "center") {
                 infoHtml += `
-          <p class="text-sm text-blue-600 mb-2">${subtype} in ${area}</p>
+          <p class="text-sm text-amber-700 mb-2">Finnish immigrants</p>
+          <p class="text-xs">People who have moved to Finland and require various services</p>
+        `;
+            } else if (nodeAttributes.category === "agent") {
+                const area = nodeAttributes.area || "Specialized agent";
+                infoHtml += `
+          <p class="text-sm text-blue-600 mb-2">Specialist in ${area}</p>
           <p class="text-xs">Connects needs with Finnish organizations</p>
         `;
             } else if (nodeAttributes.category === "organization") {
@@ -463,7 +507,11 @@ function initializeHoverEffects(graph, renderer) {
 
             // Position the panel near the mouse but always inside the container
             const containerRect = renderer.getContainer().getBoundingClientRect();
-            const mousePosition = renderer.viewportToScreen(nodeAttributes);
+
+            // Get screen coordinates from node attributes
+            // We'll use node coordinates directly since viewportToScreen is not available
+            const { x, y } = nodeAttributes;
+            const mousePosition = renderer.graphToViewport({ x, y });
 
             // Calculate position to keep panel within container
             const panelWidth = 250; // max-width from CSS
@@ -551,8 +599,8 @@ function initializeHoverEffects(graph, renderer) {
     container.addEventListener("keydown", (e) => {
         if (e.key === "Tab") {
             // Focus management for tab navigation
-            container.setAttribute("aria-activedescendant", "tapio");
-            setHoveredNode("tapio"); // Default to Tapio node
+            container.setAttribute("aria-activedescendant", "immigrants");
+            setHoveredNode("immigrants"); // Default to Immigrants node
         }
     });
 }
