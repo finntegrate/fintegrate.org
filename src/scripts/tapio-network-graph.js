@@ -460,12 +460,7 @@ function initializeHoverEffects(graph, renderer) {
             let infoHtml = `<h4 class="font-semibold text-lg mb-1">${nodeAttributes.label}</h4>`;
 
             // Add different content based on node category
-            if (nodeAttributes.category === "center") {
-                infoHtml += `
-          <p class="text-sm text-amber-700 mb-2">Finnish immigrants</p>
-          <p class="text-xs">People who have moved to Finland and require various services</p>
-        `;
-            } else if (nodeAttributes.category === "agent") {
+            if (nodeAttributes.category === "agent") {
                 const area = nodeAttributes.area || "Specialized agent";
                 infoHtml += `
           <p class="text-sm text-blue-600 mb-2">Specialist in ${area}</p>
@@ -495,8 +490,8 @@ function initializeHoverEffects(graph, renderer) {
             // Position the panel near the mouse but always inside the container
             const containerRect = renderer.getContainer().getBoundingClientRect();
 
-            // Get screen coordinates from node attributes
-            // We'll use node coordinates directly since viewportToScreen is not available
+            // Get viewport coordinates from node's graph coordinates
+            // Using the renderer's built-in coordinate conversion method
             const { x, y } = nodeAttributes;
             const mousePosition = renderer.graphToViewport({ x, y });
 
