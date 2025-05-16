@@ -21,7 +21,7 @@ const NODE_SIZES = {
     ORCHESTRATOR: 15,
     AGENT: 10,
     ORGANIZATION: 8,
-    NEED: 7,
+    NEED: 9,     // Slightly larger to be more prominent in center
     IMMIGRANTS: 18,
 };
 
@@ -102,15 +102,7 @@ export function initializeGraph() {
     // Create a new graph instance
     const graph = new Graph();
 
-    // Add "Immigrants" as the central node
-    addNode(graph, "immigrants", {
-        label: "Immigrants",
-        category: "center",
-        size: NODE_SIZES.ORCHESTRATOR,
-        color: "#8D6E63", // Brown color
-        x: 0,
-        y: 0,
-    });
+    // We're no longer using a central immigrants node - focusing on needs, agents and organizations
 
     // Add agent nodes
     const agents = [
@@ -225,10 +217,7 @@ export function initializeGraph() {
         });
     });
 
-    // Connect immigrants to all needs
-    needs.forEach((need) => {
-        addImmigrantsNeedsEdge(graph, "immigrants", need.id);
-    });
+    // No longer connecting to central immigrants node
 
     // Define need to agent connections
     const needAgentConnections = [
@@ -268,9 +257,8 @@ export function initializeGraph() {
         });
     });
 
-    // Position nodes in concentric circles
+    // Position nodes in a more organic layout without a central node
     const layers = {
-        center: [ "immigrants" ],
         needs: needs.map(n => n.id),
         agents: agents.map(a => a.id),
         organizations: organizations.map(o => o.id)
@@ -356,33 +344,59 @@ export function initializeGraph() {
 }
 
 /**
- * Position nodes in concentric circles based on their layer
+ * Position nodes in groups for initial layout
  * @param {Graph} graph - The graph instance
  * @param {Object} layers - Object with keys as layer names and values as arrays of node ids
  */
 function positionNodesInConcentricCircles(graph, layers) {
     const centerX = 0;
     const centerY = 0;
-    const radiusStep = 60;  // Distance between consecutive layers
 
-    // Process each layer
-    Object.entries(layers).forEach(([ layerName, nodeIds ], layerIndex) => {
-        // Skip the center node since it's already positioned at (0,0)
-        if (layerName === "center") return;
-
-        const radius = radiusStep * layerIndex;
-        const nodeCount = nodeIds.length;
-
-        // Position nodes evenly in a circle
-        nodeIds.forEach((nodeId, i) => {
+    // We'll create a more clustered layout by type
+    // Position needs in a tight circle in the center
+    if (layers.needs) {
+        const radius = 50; // Smaller radius for tighter circle
+        const nodeCount = layers.needs.length;
+        layers.needs.forEach((nodeId, i) => {
             const angle = (2 * Math.PI * i) / nodeCount;
             const x = centerX + radius * Math.cos(angle);
             const y = centerY + radius * Math.sin(angle);
-
             graph.setNodeAttribute(nodeId, "x", x);
             graph.setNodeAttribute(nodeId, "y", y);
+            // Add a fixed flag to keep needs more anchored during force layout
+            graph.setNodeAttribute(nodeId, "fixed", 0.8); // Partial fixing (0-1)
         });
-    });
+    }
+
+    // Position agents in a ring around needs
+    if (layers.agents) {
+        const radius = 130; // Slightly closer to the needs
+        const nodeCount = layers.agents.length;
+        layers.agents.forEach((nodeId, i) => {
+            const angle = (2 * Math.PI * i) / nodeCount;
+            const x = centerX + radius * Math.cos(angle);
+            const y = centerY + radius * Math.sin(angle);
+            graph.setNodeAttribute(nodeId, "x", x);
+            graph.setNodeAttribute(nodeId, "y", y);
+            // Slightly anchor agents but allow more movement than needs
+            graph.setNodeAttribute(nodeId, "fixed", 0.3);
+        });
+    }
+
+    // Position organizations in outer ring
+    if (layers.organizations) {
+        const radius = 210; // Slightly closer for better visualization
+        const nodeCount = layers.organizations.length;
+        layers.organizations.forEach((nodeId, i) => {
+            const angle = (2 * Math.PI * i) / nodeCount;
+            const x = centerX + radius * Math.cos(angle);
+            const y = centerY + radius * Math.sin(angle);
+            graph.setNodeAttribute(nodeId, "x", x);
+            graph.setNodeAttribute(nodeId, "y", y);
+            // Organizations can move more freely
+            graph.setNodeAttribute(nodeId, "fixed", 0.1);
+        });
+    }
 }
 
 /**
@@ -396,15 +410,21 @@ function applyForceAtlasLayout(graph, renderer) {
     // First position nodes in concentric circles as a starting point
     // (This is already done in the main function)
 
-    // Apply ForceAtlas2 to refine the positions
+    // Make sure the ForceAtlas2 algorithm respects our fixed attributes
+
+    // Apply ForceAtlas2 to refine the positions while respecting fixed nodes
     // This runs synchronously and directly modifies the graph's node positions
     forceAtlas2.assign(graph, {
-        iterations: 100,  // More iterations for better layout
+        iterations: 120,  // Slightly fewer iterations to prevent over-scattering
         settings: {
-            gravity: 2,
-            scalingRatio: 4,
-            strongGravityMode: true,
-            slowDown: 2
+            gravity: 2.0,            // Higher gravity to keep nodes closer to center
+            scalingRatio: 4,         // Slightly reduced scaling for better control
+            strongGravityMode: true, // Use strong gravity to keep nodes from drifting too far
+            slowDown: 5,             // Higher slowdown for more stable layout
+            barnesHutOptimize: true,
+            barnesHutTheta: 0.8,
+            linLogMode: false,       // Disable linLogMode for more uniform node distances
+            adjustSizes: true        // Adjust calculations based on node sizes
         }
     });
 
