@@ -302,11 +302,11 @@ export function initializeGraph() {
             const res = { ...data };
 
             if (data.category === "center") {
-                res.label = `${data.label}\n(Finnish)`;
+                res.label = `${data.label}`;
             } else if (data.category === "agent") {
-                res.label = `${data.label}\n(${data.area})`;
+                res.label = `${data.label}`;
             } else if (data.category === "organization") {
-                res.label = `${data.label}\n(${data.area})`;
+                res.label = `${data.label}`;
             }
 
             // Handle highlighting for better interactivity
