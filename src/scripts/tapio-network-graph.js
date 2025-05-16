@@ -490,7 +490,6 @@ function initializeHoverEffects(graph, renderer) {
             } else if (nodeAttributes.category === "need") {
                 infoHtml += `
           <p class="text-sm text-yellow-600 mb-2">Immigrant Need</p>
-          <p class="text-xs">Click to see which agents can help with this need</p>
         `;
             }
 
