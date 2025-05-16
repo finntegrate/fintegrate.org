@@ -13,8 +13,6 @@ const COLORS = {
     NEED: "#F59E0B", // Yellow/Orange
     KNOWLEDGE_EDGE: "#6B7280", // Gray
     HIGHLIGHT: "#FF5733", // Bright orange for highlighting
-    IMMIGRANTS: "#8D6E63", // Brown color for immigrants node
-    IMMIGRANTS_NEEDS_EDGE: "#A1887F", // Light brown for immigrant-needs connections
 };
 
 const NODE_SIZES = {
@@ -22,11 +20,9 @@ const NODE_SIZES = {
     AGENT: 10,
     ORGANIZATION: 8,
     NEED: 9,     // Slightly larger to be more prominent in center
-    IMMIGRANTS: 18,
 };
 
 const EDGE_TYPES = {
-    IMMIGRANTS_NEEDS: "immigrants_needs",
     NEED_AGENT: "need_agent",
     AGENT_ORGANIZATION: "agent_organization",
 };
@@ -61,15 +57,7 @@ function addEdge(graph, source, target, category, color) {
     });
 }
 
-/**
- * Add an edge between immigrants and their needs
- * @param {Graph} graph - The graph instance
- * @param {string} source - Source node id (immigrants)
- * @param {string} target - Target node id (need)
- */
-function addImmigrantsNeedsEdge(graph, source, target) {
-    addEdge(graph, source, target, EDGE_TYPES.IMMIGRANTS_NEEDS, COLORS.IMMIGRANTS_NEEDS_EDGE);
-}
+
 
 /**
  * Add an edge between needs and agents that help with them
@@ -314,9 +302,7 @@ export function initializeGraph() {
             const res = { ...data };
 
             // Make certain edge types more visible and differentiated
-            if (data.edgeCategory === EDGE_TYPES.IMMIGRANTS_NEEDS) {
-                res.size = data.size * 1.5; // Thicker lines
-            } else if (data.edgeCategory === EDGE_TYPES.AGENT_ORGANIZATION) {
+            if (data.edgeCategory === EDGE_TYPES.AGENT_ORGANIZATION) {
                 // Leave as is
             } else if (data.edgeCategory === EDGE_TYPES.NEED_AGENT) {
                 res.size = data.size * 1.2; // Slightly thicker than knowledge
