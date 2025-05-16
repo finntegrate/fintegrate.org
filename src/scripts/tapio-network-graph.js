@@ -2,7 +2,7 @@
 import Graph from "graphology";
 import Sigma from "sigma";
 import * as layoutAlgorithms from "graphology-layout";
-import * as forceAtlas2 from "graphology-layout-forceatlas2";
+import forceAtlas2 from "graphology-layout-forceatlas2";
 
 /**
  * Node and edge styling constants
@@ -348,8 +348,8 @@ export function initializeGraph() {
         }
     });
 
-    // Initialize animation functionality
-    initializeAnimation(graph, renderer);
+    // Apply force-directed layout for better visualization
+    applyForceAtlasLayout(graph, renderer);
 
     // Initialize hover effects for better interactivity
     initializeHoverEffects(graph, renderer);
@@ -386,53 +386,32 @@ function positionNodesInConcentricCircles(graph, layers) {
 }
 
 /**
- * Initialize the animation functionality for the graph
+ * Apply force-directed layout to improve the graph visualization
  * @param {Graph} graph - The graphology graph instance
  * @param {Sigma} renderer - The sigma renderer instance
  */
-function initializeAnimation(graph, renderer) {
-    let isAnimating = false;
-    let forceAtlasInstance = null;
-    let refreshInterval = null;
-    const animateButton = document.getElementById("animate-button");
+function applyForceAtlasLayout(graph, renderer) {
+    console.log("Applying ForceAtlas2 layout...");
 
-    if (!animateButton) {
-        console.error("Could not find animate-button element");
-        return;
-    }
+    // First position nodes in concentric circles as a starting point
+    // (This is already done in the main function)
 
-    animateButton.addEventListener("click", function () {
-        if (isAnimating) {
-            // Stop the force atlas layout
-            if (forceAtlasInstance) {
-                forceAtlasInstance.stop();
-            }
-            if (refreshInterval) {
-                clearInterval(refreshInterval);
-                refreshInterval = null;
-            }
-            animateButton.textContent = "Animate Network";
-        } else {
-            // Start the force atlas layout
-            forceAtlasInstance = forceAtlas2.forceAtlas2(graph, {
-                settings: {
-                    gravity: 3,
-                    scalingRatio: 5,
-                },
-            });
-
-            // Start the layout algorithm
-            forceAtlasInstance.start();
-
-            // Set up a periodic refresh for the renderer
-            refreshInterval = window.setInterval(() => {
-                renderer.refresh();
-            }, 50);
-
-            animateButton.textContent = "Stop Animation";
+    // Apply ForceAtlas2 to refine the positions
+    // This runs synchronously and directly modifies the graph's node positions
+    forceAtlas2.assign(graph, {
+        iterations: 100,  // More iterations for better layout
+        settings: {
+            gravity: 2,
+            scalingRatio: 4,
+            strongGravityMode: true,
+            slowDown: 2
         }
-        isAnimating = !isAnimating;
     });
+
+    // Refresh the renderer to show the new positions
+    renderer.refresh();
+
+    console.log("ForceAtlas2 layout applied");
 }
 
 /**
