@@ -265,6 +265,11 @@ export function initializeGraph() {
         return;
     }
 
+    const nodeInfoPanel = document.getElementById("node-info-panel");
+    if (!nodeInfoPanel) {
+        console.warn("Could not find node-info-panel element - info display will be disabled");
+    }
+
     const renderer = new Sigma(graph, container, {
         // Default node type is 'circle' - we don't need to specify custom node programs
         // as all our nodes can be rendered as circles
@@ -450,6 +455,10 @@ function fadeColor(hexColor, opacity) {
 function initializeHoverEffects(graph, renderer) {
     // Find the node info panel element
     const nodeInfoPanel = document.getElementById("node-info-panel");
+
+    if (!nodeInfoPanel) {
+        console.warn("Could not find node-info-panel element - info display will be disabled");
+    }
 
     // Create a function that will update the node info panel
     function updateNodeInfoPanel(node) {
