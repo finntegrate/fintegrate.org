@@ -2,61 +2,152 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<nav
-  class="navbar bg-base-100 bg-opacity-90 backdrop-blur-sm sticky top-0 z-50 shadow-sm"
->
-  <div class="navbar-start">
-    <a
-      href="/"
-      class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+<div class="drawer">
+  <input id="main-menu-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content">
+    <nav
+      class="navbar bg-base-100 bg-opacity-90 backdrop-blur-sm sticky top-0 z-50 shadow-sm"
     >
-      Finntegrate
-    </a>
+      <div class="navbar-start">
+        <div class="flex-none lg:hidden">
+          <label for="main-menu-drawer" aria-label="open menu" class="btn btn-square btn-ghost">
+            <Icon
+              name="material-symbols:menu"
+              class="h-5 w-5"
+              aria-hidden="true"
+            />
+          </label>
+        </div>
+        <a
+          href="/"
+          class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+        >
+          Finntegrate
+        </a>
+      </div>
+      
+      <!-- Desktop menu - hidden on mobile -->
+      <div class="navbar-end hidden lg:flex">
+        <a href="/about" class="btn btn-ghost" aria-label="Mission & Vision">
+          <Icon
+            name="material-symbols:lightbulb-outline"
+            class="h-5 w-5"
+            aria-hidden="true"
+          />
+          <span>Mission & Vision</span>
+        </a>
+        <a href="/tapio" class="btn btn-ghost" aria-label="Tapio AI Assistant">
+          <Icon
+            name="material-symbols:smart-toy-outline"
+            class="h-5 w-5"
+            aria-hidden="true"
+          />
+          <span>Tapio</span>
+        </a>
+        <a href="/#contact" class="btn btn-ghost" aria-label="Contact">
+          <Icon
+            name="material-symbols:mail-outline"
+            class="h-5 w-5"
+            aria-hidden="true"
+          />
+          <span>Contact</span>
+        </a>
+        <a
+          href="https://docs.finntegrate.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost btn-circle"
+          aria-label="Research Documentation"
+          title="Research Documentation"
+        >
+          <Icon name="material-symbols:book-5" class="h-5 w-5" aria-hidden="true" />
+        </a>
+        <a
+          href="https://github.com/finntegrate/tapio"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost btn-circle"
+          aria-label="GitHub"
+          title="Source Code"
+        >
+          <Icon name="mdi:github" class="h-5 w-5" aria-hidden="true" />
+        </a>
+      </div>
+      
+      <!-- Mobile-only buttons for external links -->
+      <div class="navbar-end flex lg:hidden">
+        <a
+          href="https://docs.finntegrate.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost btn-circle"
+          aria-label="Research Documentation"
+          title="Research Documentation"
+        >
+          <Icon name="material-symbols:book-5" class="h-5 w-5" aria-hidden="true" />
+        </a>
+        <a
+          href="https://github.com/finntegrate/tapio"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost btn-circle"
+          aria-label="GitHub"
+          title="Source Code"
+        >
+          <Icon name="mdi:github" class="h-5 w-5" aria-hidden="true" />
+        </a>
+      </div>
+    </nav>
   </div>
-  <div class="navbar-end">
-    <a href="/about" class="btn btn-ghost" aria-label="Mission & Vision">
-      <Icon
-        name="material-symbols:lightbulb-outline"
-        class="h-5 w-5"
-        aria-hidden="true"
-      />
-      <span>Mission & Vision</span>
-    </a>
-    <a href="/tapio" class="btn btn-ghost" aria-label="Tapio AI Assistant">
-      <Icon
-        name="material-symbols:smart-toy-outline"
-        class="h-5 w-5"
-        aria-hidden="true"
-      />
-      <span>Tapio</span>
-    </a>
-    <a href="/#contact" class="btn btn-ghost" aria-label="Contact">
-      <Icon
-        name="material-symbols:mail-outline"
-        class="h-5 w-5"
-        aria-hidden="true"
-      />
-      <span>Contact</span>
-    </a>
-    <a
-      href="https://docs.finntegrate.org"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn btn-ghost btn-circle"
-      aria-label="Research Documentation"
-      title="Research Documentation"
-    >
-      <Icon name="material-symbols:book-5" class="h-5 w-5" aria-hidden="true" />
-    </a>
-    <a
-      href="https://github.com/finntegrate/tapio"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn btn-ghost btn-circle"
-      aria-label="GitHub"
-      title="Source Code"
-    >
-      <Icon name="mdi:github" class="h-5 w-5" aria-hidden="true" />
-    </a>
+  
+  <!-- Mobile drawer menu -->
+  <div class="drawer-side z-50">
+    <label for="main-menu-drawer" aria-label="close menu" class="drawer-overlay"></label>
+    <div class="menu p-4 w-80 min-h-full bg-base-100 text-base-content pt-16"
+         role="navigation" aria-label="Main menu">
+      <!-- Logo on top of drawer -->
+      <div class="mb-6 pl-4">
+        <a
+          href="/"
+          class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+        >
+          Finntegrate
+        </a>
+      </div>
+      
+      <ul>
+        <li>
+          <a href="/about" class="flex items-center gap-3 py-3">
+            <Icon
+              name="material-symbols:lightbulb-outline"
+              class="h-5 w-5"
+              aria-hidden="true"
+            />
+            <span>Mission & Vision</span>
+          </a>
+        </li>
+        <li>
+          <a href="/tapio" class="flex items-center gap-3 py-3">
+            <Icon
+              name="material-symbols:smart-toy-outline"
+              class="h-5 w-5"
+              aria-hidden="true"
+            />
+            <span>Tapio AI Assistant</span>
+          </a>
+        </li>
+        <li>
+          <a href="/#contact" class="flex items-center gap-3 py-3">
+            <Icon
+              name="material-symbols:mail-outline"
+              class="h-5 w-5"
+              aria-hidden="true"
+            />
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
+</div>
 </nav>
