@@ -41,7 +41,10 @@ import { Icon } from 'astro-icon/components'
 
 ### Context7
 
-- Use the `context7` model context protocol provider to get the most recent documentation for project dependencies.
+Make sure we use the correct interfaces and APIs for the project dependencies. We have an MCP tool that will retrieve the most recent documentation for the project dependencies. The MCP tool is called `context7` and is used to resolve the library ID for a specific project dependency. Once we have the library ID, we can use it to get the most recent documentation for that project dependency.
+
+- `resolge-library-id` is used to resolve the library ID for a specific project dependency
+- `get-library-docs` is used to get the most recent documentation for a specific project dependency
 
 ### Tailwind CSS and daisyUI
 
